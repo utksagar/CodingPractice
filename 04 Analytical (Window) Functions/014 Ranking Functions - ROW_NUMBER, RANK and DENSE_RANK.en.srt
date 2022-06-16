@@ -1,0 +1,199 @@
+1
+00:00:01,380 --> 00:00:09,540
+The ranking functions I want to talk about are row number, rank and rank row no returns, a unique
+
+2
+00:00:09,540 --> 00:00:11,500
+number for each row in your data.
+
+3
+00:00:12,210 --> 00:00:17,700
+The function takes no parameters and it numbers each row based on the order of the data.
+
+4
+00:00:18,750 --> 00:00:24,870
+Row number requires an order by clause within the clause if you're using Oracle, but you don't need
+
+5
+00:00:24,870 --> 00:00:32,520
+it for other database management systems such as MySQL, rank will rank your data within each partition.
+
+6
+00:00:33,510 --> 00:00:38,440
+It will assign the same rank for trade values and there can be gaps in the numbering.
+
+7
+00:00:38,970 --> 00:00:44,940
+For example, if two values are tied for second place, the next available ranking will be for.
+
+8
+00:00:46,050 --> 00:00:52,430
+And Frank will also rank your data with each politician, it will assign the same rank for tied values,
+
+9
+00:00:52,680 --> 00:00:55,320
+but this time there will not be gaps in the numbers.
+
+10
+00:00:56,460 --> 00:01:02,040
+For example, if two values are tied for second place, the next available number will be three.
+
+11
+00:01:03,870 --> 00:01:10,110
+To get the desired result for rank and then rank, you need to apply the order by clause in the over
+
+12
+00:01:10,110 --> 00:01:13,050
+clause for that field you would like to be ranked.
+
+13
+00:01:14,300 --> 00:01:20,080
+And again, if you're using our AS and you don't specify the order by clause for the rank and don'ts
+
+14
+00:01:20,090 --> 00:01:22,100
+rank functions, the query will fail.
+
+15
+00:01:23,630 --> 00:01:26,740
+Other the database management systems will still run.
+
+16
+00:01:27,320 --> 00:01:32,990
+But if you think about it, it doesn't really make sense to apply ranking functions without actually
+
+17
+00:01:32,990 --> 00:01:34,090
+ordering your data.
+
+18
+00:01:36,900 --> 00:01:46,070
+OK, so let's apply the three ranking functions to the countries table and order by population, so
+
+19
+00:01:46,080 --> 00:01:53,820
+select name population and I'll start with rule number
+
+20
+00:01:56,670 --> 00:02:00,390
+over quota by population.
+
+21
+00:02:06,080 --> 00:02:07,460
+Then I'll just copy this twice.
+
+22
+00:02:11,600 --> 00:02:12,710
+Change it to rank
+
+23
+00:02:15,350 --> 00:02:15,800
+and
+
+24
+00:02:18,710 --> 00:02:23,390
+tense rank underscore countries.
+
+25
+00:02:27,440 --> 00:02:34,100
+And the order by population is in ascending order by default if you don't specify ascending or descending.
+
+26
+00:02:39,060 --> 00:02:46,410
+Now, as you can see, the row number stops from one in increments, one for each year until we reach
+
+27
+00:02:46,410 --> 00:02:47,850
+two hundred and forty nine.
+
+28
+00:02:50,700 --> 00:02:51,680
+Which is the final word.
+
+29
+00:02:53,180 --> 00:02:59,430
+Now, let's look at rank and then rank, this is ranking the values based on population.
+
+30
+00:02:59,990 --> 00:03:07,760
+So the first two valleys, the first two rows have zero population and so are tied for number one.
+
+31
+00:03:08,190 --> 00:03:14,750
+But for the third row rank gives this a ranking of three and skips the number two.
+
+32
+00:03:15,910 --> 00:03:24,310
+Because if we had three rows tied for first, then it would skip three numbers and give the next rank
+
+33
+00:03:24,370 --> 00:03:24,800
+of four.
+
+34
+00:03:24,940 --> 00:03:30,940
+But if we look at Dennis rank, this gives the third row a rank of two and it doesn't skip a number.
+
+35
+00:03:31,750 --> 00:03:34,270
+And that's the difference between rank and Dennis rank.
+
+36
+00:03:36,350 --> 00:03:42,170
+OK, let's now apply a petition by the region ID to our query.
+
+37
+00:03:43,440 --> 00:03:45,870
+And also at the region, I'd call
+
+38
+00:03:49,380 --> 00:03:54,710
+and I will partitioned by the region, Heidi.
+
+39
+00:03:57,690 --> 00:03:58,770
+And I will add that.
+
+40
+00:04:03,520 --> 00:04:05,440
+To the other two functions.
+
+41
+00:04:08,160 --> 00:04:08,760
+And here.
+
+42
+00:04:12,020 --> 00:04:16,220
+So the same scenario applies as per the previous query.
+
+43
+00:04:20,090 --> 00:04:23,150
+But it is contained within the partition of each region.
+
+44
+00:04:23,960 --> 00:04:25,400
+So we in region and 10.
+
+45
+00:04:29,260 --> 00:04:32,380
+And the ranking starts again when we get to the next partition.
+
+46
+00:04:35,260 --> 00:04:42,850
+Now, just to show you, if I remove the order by clause and even one of the partitions.
+
+47
+00:04:44,830 --> 00:04:45,550
+We get Nera.
+
+48
+00:04:47,750 --> 00:04:50,750
+Missing order by expression in the window specification.
+
+49
+00:04:52,700 --> 00:04:57,740
+OK, so have some practice with these functions and apply different partitions so you can start to get
+
+50
+00:04:57,740 --> 00:04:58,600
+comfortable with them.

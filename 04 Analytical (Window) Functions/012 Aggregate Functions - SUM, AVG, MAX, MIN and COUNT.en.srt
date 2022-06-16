@@ -1,0 +1,151 @@
+1
+00:00:00,360 --> 00:00:06,390
+So, as you know, in all of our previous examples, we've used the some aggregation function, but
+
+2
+00:00:06,390 --> 00:00:09,360
+now let's go over the other aggregation functions as well.
+
+3
+00:00:09,660 --> 00:00:15,990
+In some examples, we'll use the country's table and will apply the aggregation functions on the population
+
+4
+00:00:15,990 --> 00:00:16,400
+field.
+
+5
+00:00:17,440 --> 00:00:21,940
+So let's try to select a name which is the country name.
+
+6
+00:00:22,810 --> 00:00:24,700
+I also had regionality.
+
+7
+00:00:26,960 --> 00:00:34,010
+And now I'll apply the same aggregation which we've already been using, and to make this an analytical
+
+8
+00:00:34,010 --> 00:00:40,720
+function, I'll use the clues, but I won't specify anything inside the over clause.
+
+9
+00:00:41,090 --> 00:00:46,940
+So this analytical function will be applied across the entire table, and I'll do that for the rest
+
+10
+00:00:46,940 --> 00:00:48,410
+of the aggregations as well.
+
+11
+00:01:14,040 --> 00:01:19,230
+From eBay, undisclosed countries, let's hit, run.
+
+12
+00:01:23,750 --> 00:01:24,480
+Hyperbola.
+
+13
+00:01:31,780 --> 00:01:32,950
+I mean.
+
+14
+00:01:35,250 --> 00:01:35,670
+Greg.
+
+15
+00:01:39,210 --> 00:01:44,580
+OK, so as I said, because we've applied the over clause.
+
+16
+00:01:46,470 --> 00:01:49,170
+And no parameters within the over clause.
+
+17
+00:01:50,630 --> 00:01:56,870
+These aggregation functions are applied to the entire table, so the sum of the population for all countries
+
+18
+00:01:56,870 --> 00:01:58,370
+is seven point seven billion.
+
+19
+00:01:58,910 --> 00:02:04,400
+The minimum population is zero, the maximum population is one point four billion.
+
+20
+00:02:05,360 --> 00:02:11,210
+There are two hundred and forty nine votes and the average population is approximately thirty one million.
+
+21
+00:02:14,420 --> 00:02:25,580
+OK, so now let's apply a partition in our over clause, we will partition by region it and I will copy
+
+22
+00:02:25,580 --> 00:02:25,880
+that
+
+23
+00:02:29,150 --> 00:02:31,240
+into all of the analytical functions.
+
+24
+00:02:34,950 --> 00:02:35,610
+And here are.
+
+25
+00:02:37,510 --> 00:02:46,300
+So now this time we are partitioning by region, and so the sum of the population for region wide 10
+
+26
+00:02:46,720 --> 00:02:47,560
+is one billion.
+
+27
+00:02:48,910 --> 00:02:50,480
+The minimum population is zero.
+
+28
+00:02:51,130 --> 00:02:54,980
+The maximum population is three hundred and twenty nine million.
+
+29
+00:02:55,750 --> 00:03:03,070
+There are fifty seven countries in Region 10 and the average average population is approximately 17
+
+30
+00:03:03,070 --> 00:03:03,460
+million.
+
+31
+00:03:04,150 --> 00:03:06,100
+If I now go down to the next region.
+
+32
+00:03:10,750 --> 00:03:11,650
+The values change.
+
+33
+00:03:13,340 --> 00:03:19,610
+So the population is now what looks to be seven hundred and forty seven million, the minimum population
+
+34
+00:03:19,640 --> 00:03:21,530
+is a seven hundred and ninety nine.
+
+35
+00:03:21,890 --> 00:03:24,620
+The maximum population is one hundred and forty five million.
+
+36
+00:03:24,830 --> 00:03:26,720
+Two hundred forty six million approximately.
+
+37
+00:03:27,470 --> 00:03:34,460
+There are fifty one countries and the average population is lower than region ten at approximately fourteen
+
+38
+00:03:34,460 --> 00:03:36,050
+point seven million.

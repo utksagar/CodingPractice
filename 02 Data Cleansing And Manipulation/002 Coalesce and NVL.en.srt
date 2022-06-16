@@ -1,0 +1,263 @@
+1
+00:00:00,760 --> 00:00:06,190
+I want to talk about two functions that can handle null values in your data sets, we'll be using these
+
+2
+00:00:06,190 --> 00:00:10,060
+functions throughout the course and being able to handle no values is very important.
+
+3
+00:00:11,050 --> 00:00:18,490
+Coalesce takes two or more expressions, and for each role, it returns the first value from these expressions
+
+4
+00:00:18,640 --> 00:00:19,630
+that is not null.
+
+5
+00:00:21,350 --> 00:00:27,530
+So let's say you have two problems, first name and nickname, sometimes you find that the first name
+
+6
+00:00:27,530 --> 00:00:33,380
+is left blank and when it's left blank, usually it's because the first name is in the nickname fueled
+
+7
+00:00:33,380 --> 00:00:34,100
+by accident.
+
+8
+00:00:35,610 --> 00:00:42,360
+You can create a column using coalesce to return the first name, if it is not null, otherwise return
+
+9
+00:00:42,360 --> 00:00:44,430
+the nickname if the first name is no.
+
+10
+00:00:44,940 --> 00:00:51,210
+So as you can imagine, the ordering is important as it will take the value from the first expression
+
+11
+00:00:51,420 --> 00:00:52,410
+that is not null.
+
+12
+00:00:53,650 --> 00:01:00,220
+If all of the expressions are no, then it will return all the data types in each expression must also
+
+13
+00:01:00,220 --> 00:01:00,690
+be the same.
+
+14
+00:01:01,180 --> 00:01:06,400
+You can't have a numerical data type in the first expression and a character to type in the next.
+
+15
+00:01:07,820 --> 00:01:14,420
+The syntax for coalesce is to have coalesce, open parenthesis and list all of the expressions you'd
+
+16
+00:01:14,420 --> 00:01:15,230
+like to include.
+
+17
+00:01:19,020 --> 00:01:21,750
+OK, so let's query our table.
+
+18
+00:01:31,540 --> 00:01:36,400
+I want to column that will return either the Web address first.
+
+19
+00:01:37,380 --> 00:01:40,940
+And if there is no Web address, then return the story.
+
+20
+00:01:42,590 --> 00:01:43,550
+So I can type.
+
+21
+00:01:45,930 --> 00:01:58,950
+Select name, web address and then coalesce and the first expression, because, remember, ordering
+
+22
+00:01:58,950 --> 00:02:08,760
+is important is Web address and then if that's no, then provide the store name and hit run.
+
+23
+00:02:10,900 --> 00:02:17,920
+As you can see in the first row, we have the Web address, the remaining rows for the Web address on
+
+24
+00:02:17,930 --> 00:02:18,240
+now.
+
+25
+00:02:18,820 --> 00:02:21,850
+So the story has been populated instead.
+
+26
+00:02:23,600 --> 00:02:28,340
+So let's see what happens if I swap the expressions around and I have stoning first.
+
+27
+00:02:37,280 --> 00:02:44,270
+Now, basically, we return all the store names in the store name field, including online rather than
+
+28
+00:02:44,270 --> 00:02:44,930
+the Web address.
+
+29
+00:02:46,540 --> 00:02:52,330
+So this is just a reminder that the ordering is important, store name is prioritized because it's first
+
+30
+00:02:52,630 --> 00:02:54,810
+and since then has no null values.
+
+31
+00:02:54,970 --> 00:02:57,210
+The Web address field is not used at all.
+
+32
+00:02:58,310 --> 00:03:02,780
+OK, so let's now add another expression storewide.
+
+33
+00:03:09,850 --> 00:03:14,290
+Now, this time we get an error because storewide is a numeric data type.
+
+34
+00:03:15,760 --> 00:03:19,930
+So we must ensure that all of the expressions are of the same data type.
+
+35
+00:03:23,380 --> 00:03:29,380
+Never takes no values from an expression and replaces it with a specified strain.
+
+36
+00:03:30,560 --> 00:03:36,170
+So, for example, if you wanted all no values to be zero, instead, you can do that.
+
+37
+00:03:38,600 --> 00:03:44,570
+If the expression in the first parameter is a character, then it converts the replacement stream to
+
+38
+00:03:44,570 --> 00:03:45,200
+a character.
+
+39
+00:03:46,480 --> 00:03:52,270
+If it's numeric, then it's a bit more complicated, but usually convert it into a numeric data type.
+
+40
+00:03:54,040 --> 00:03:55,780
+So here's the syntax for Engvall.
+
+41
+00:03:56,470 --> 00:04:01,180
+It takes an expression which is usually a field, and then you type your replacement string.
+
+42
+00:04:07,200 --> 00:04:09,600
+OK, so let's clear we are on the table.
+
+43
+00:04:19,380 --> 00:04:27,150
+In the cornfield, we have notes for commissions for many employees, let's replace these novels with
+
+44
+00:04:27,150 --> 00:04:27,570
+zero.
+
+45
+00:04:31,540 --> 00:04:39,820
+So I will alias the asterisk and then I'll do Annville com, which is the field and then the replacement,
+
+46
+00:04:40,720 --> 00:04:42,910
+which is zero for unknown values.
+
+47
+00:04:43,660 --> 00:04:44,410
+And here.
+
+48
+00:04:46,950 --> 00:04:53,310
+And now, as you can see in our field, we have zeros instead of the normal values.
+
+49
+00:04:55,850 --> 00:04:59,690
+Now, let's try to replace this with the string no commission.
+
+50
+00:05:05,530 --> 00:05:12,160
+We get an error as it must be the same data type uncombed only takes numeric values.
+
+51
+00:05:13,350 --> 00:05:20,670
+So we can replace strength with character data types and the string must be enclosed in single words,
+
+52
+00:05:20,670 --> 00:05:26,040
+if we do so, let me select Star from Impaction.
+
+53
+00:05:28,760 --> 00:05:36,350
+And now what I'll do is I'll insert a record into the table and I'll leave the E name has no.
+
+54
+00:05:38,410 --> 00:05:42,590
+So I will type insert into AMP.
+
+55
+00:05:45,280 --> 00:05:46,000
+Valli's.
+
+56
+00:05:49,030 --> 00:05:52,660
+Zero techno, no.
+
+57
+00:05:54,870 --> 00:05:59,590
+Which is a test for the job manager, right?
+
+58
+00:05:59,610 --> 00:06:09,300
+Zero system with Heidi, thousand for the salary, no for the commission and 10 for the Depner and.
+
+59
+00:06:14,470 --> 00:06:19,270
+OK, so now a redemptive looking.
+
+60
+00:06:21,340 --> 00:06:30,130
+And at this time, I want to replace I want to use the anvil function on the Inamed field, unpopulated,
+
+61
+00:06:30,160 --> 00:06:33,490
+with no name instead of any no values.
+
+62
+00:06:34,600 --> 00:06:40,030
+So I can type select your name and feel your name.
+
+63
+00:06:40,270 --> 00:06:46,750
+And now this time I enclose in single vote because I'm entering a string and I'll take no name.
+
+64
+00:06:50,800 --> 00:06:53,320
+And as you can see, we have no name instead.
+
+65
+00:06:55,040 --> 00:06:58,310
+So now let me just delete the record I inserted.
+
+66
+00:07:08,800 --> 00:07:09,390
+There we go.

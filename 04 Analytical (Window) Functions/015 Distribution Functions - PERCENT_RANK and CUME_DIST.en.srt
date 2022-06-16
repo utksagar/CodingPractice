@@ -1,0 +1,123 @@
+1
+00:00:01,650 --> 00:00:10,200
+The distribution functions I want to talk about our present rank and Kim percent rank is the percentile
+
+2
+00:00:10,200 --> 00:00:14,940
+ranking of the number of a road between zero and one.
+
+3
+00:00:16,520 --> 00:00:23,660
+The formula is rank minus one, divided by the total number of rows, minus one.
+
+4
+00:00:24,960 --> 00:00:27,360
+And this is applied to each partition.
+
+5
+00:00:29,390 --> 00:00:39,230
+Kim, this is the cumulative distribution value within a group of values is the number of rose less
+
+6
+00:00:39,230 --> 00:00:45,890
+than or equal to the value of the current row, divided by the total number of rows.
+
+7
+00:00:46,250 --> 00:00:51,860
+And again, the value is between zero and one and applied to each partition.
+
+8
+00:00:54,080 --> 00:01:00,140
+To get the desired result, four percent rank and cume dysfunctions, you need to apply the order by
+
+9
+00:01:00,140 --> 00:01:05,090
+because inside the over clause for that field that you would like evaluated.
+
+10
+00:01:06,220 --> 00:01:13,060
+If you're using our escarole, the autobiographers is mandatory and the omission of an order by clause
+
+11
+00:01:13,060 --> 00:01:14,880
+will result in the query failure.
+
+12
+00:01:16,060 --> 00:01:21,880
+And again, another on another database management systems, the query remains to execute, but it will
+
+13
+00:01:21,880 --> 00:01:29,110
+not return any meaningful results because your data really needs to be ranked in order for this for
+
+14
+00:01:29,110 --> 00:01:31,000
+these functions to be meaningful.
+
+15
+00:01:32,680 --> 00:01:39,940
+OK, so let's apply the two distribution functions to the countries table and order it by population.
+
+16
+00:01:42,350 --> 00:01:58,040
+So we select name population percent rank over quarter by population.
+
+17
+00:01:59,200 --> 00:02:05,260
+And since we're ordering like population, that is what the percent rank function will evaluate, so
+
+18
+00:02:05,260 --> 00:02:11,050
+we will evaluate the population field and the same will go for the cume just function.
+
+19
+00:02:17,920 --> 00:02:21,700
+From EPA and school countries.
+
+20
+00:02:23,900 --> 00:02:24,620
+And here on.
+
+21
+00:02:29,820 --> 00:02:30,750
+Here are our results.
+
+22
+00:02:31,890 --> 00:02:33,090
+If I go right to the end.
+
+23
+00:02:35,740 --> 00:02:42,430
+Both the percent rank and the cume dysfunctions return one, which makes sense because the range is
+
+24
+00:02:42,430 --> 00:02:43,720
+between zero and one.
+
+25
+00:02:47,220 --> 00:02:50,940
+So now let's apply a partition by regionality.
+
+26
+00:03:01,990 --> 00:03:02,740
+Christianised it.
+
+27
+00:03:09,620 --> 00:03:18,440
+So the same scenario applies, except for the functions are applied to each participant, as you can
+
+28
+00:03:18,440 --> 00:03:21,180
+see, for the end of the partition for region and 10.
+
+29
+00:03:22,430 --> 00:03:30,830
+Both functions return one and then they start again at the next partition and again if I remove the
+
+30
+00:03:30,830 --> 00:03:31,670
+order by close.
+
+31
+00:03:35,130 --> 00:03:36,200
+We return an error.

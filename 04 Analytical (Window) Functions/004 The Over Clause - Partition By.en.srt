@@ -1,0 +1,119 @@
+1
+00:00:01,340 --> 00:00:06,800
+So we've seen that if we apply the over clause with no partition, then there's some aggregation function
+
+2
+00:00:06,920 --> 00:00:09,290
+applies to all those in the entire table.
+
+3
+00:00:10,880 --> 00:00:17,480
+We can specify partitions for our window functions, for example, if we want the sum returned for the
+
+4
+00:00:17,480 --> 00:00:23,270
+total region, for that specific role, we can state partition by region it.
+
+5
+00:00:24,390 --> 00:00:31,200
+So if the road has a region idea of 10, then we will return the total population for region wide 10.
+
+6
+00:00:34,040 --> 00:00:41,300
+So to apply an analytical function which is partitioned by region wide, I can type select name, which
+
+7
+00:00:41,300 --> 00:00:47,480
+is the country name population, just so I can compare the population for the country to the population,
+
+8
+00:00:47,480 --> 00:00:54,380
+for the total region wide region on underscore ID and then the actual analytical function, which is
+
+9
+00:00:54,380 --> 00:01:01,580
+some population, and then within the overlord's type partition by region.
+
+10
+00:01:01,580 --> 00:01:06,500
+Underscore right from Epper underscore countries.
+
+11
+00:01:12,270 --> 00:01:13,290
+So this returns.
+
+12
+00:01:15,100 --> 00:01:18,850
+The total population for region is 10.
+
+13
+00:01:20,540 --> 00:01:24,560
+And then if I scroll down, you can see the total population.
+
+14
+00:01:26,790 --> 00:01:28,500
+For regionality 20.
+
+15
+00:01:34,540 --> 00:01:37,030
+And so on with region 30.
+
+16
+00:01:38,100 --> 00:01:45,180
+So there's some aggregation function is partitioned by region, and it will calculate at a low level
+
+17
+00:01:45,480 --> 00:01:46,920
+the total population.
+
+18
+00:01:48,020 --> 00:01:50,000
+For the region, I'd of that road.
+
+19
+00:01:51,140 --> 00:01:56,840
+So in the first row, it will calculate the total population for region wide 10.
+
+20
+00:01:58,560 --> 00:02:01,050
+We can also partition by multiple columns.
+
+21
+00:02:02,430 --> 00:02:06,120
+Let me now partition by region and subregion.
+
+22
+00:02:14,030 --> 00:02:19,680
+And now the population is calculated for both the region and the subregion.
+
+23
+00:02:21,040 --> 00:02:26,510
+Let me make this clear by actually including the sub region, it is in the results.
+
+24
+00:02:27,940 --> 00:02:36,640
+So now the population four region is 10 and subregion 10 is six hundred and forty eight million.
+
+25
+00:02:37,790 --> 00:02:38,930
+And as I scroll down.
+
+26
+00:02:43,120 --> 00:02:50,820
+As soon as the subregion, it changes to 80, we've calculated the total population for region wide
+
+27
+00:02:50,890 --> 00:02:59,230
+10 and subregion ID 80, whereas in the previous example we calculated the entire population for region
+
+28
+00:02:59,230 --> 00:02:59,500
+10.
+
+29
+00:03:02,410 --> 00:03:08,080
+OK, so that was a lecture on how to include politicians in your analytical functions, give it some
+
+30
+00:03:08,080 --> 00:03:12,520
+practice in your own time, and move on to the next lecture once you're comfortable with this.

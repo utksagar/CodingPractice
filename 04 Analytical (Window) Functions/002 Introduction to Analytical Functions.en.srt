@@ -1,0 +1,407 @@
+1
+00:00:00,470 --> 00:00:06,200
+Analytical functions are quite different to standard esquibel functions in terms of syntax, mainly
+
+2
+00:00:06,200 --> 00:00:12,470
+because they use the Overkill's, which we will discuss in the coming lectures, but because the syntax
+
+3
+00:00:12,470 --> 00:00:17,840
+is so different, it can be difficult to understand analytical functions and so they are often avoided.
+
+4
+00:00:18,050 --> 00:00:23,050
+However, analytical functions are extremely powerful and very useful.
+
+5
+00:00:23,780 --> 00:00:25,690
+And I'll show you an example of this now.
+
+6
+00:00:26,270 --> 00:00:29,510
+So we're in Oracle APACS and I want to look at the countries table.
+
+7
+00:00:31,480 --> 00:00:35,460
+So let's select staff from undisclosed countries.
+
+8
+00:00:37,500 --> 00:00:39,300
+So increase the limit to 500.
+
+9
+00:00:45,030 --> 00:00:52,620
+Now, let's say I want to find the percentage of total region population.
+
+10
+00:00:54,470 --> 00:00:59,930
+For each country, so, for example, Ireland belongs to Region 20.
+
+11
+00:01:01,040 --> 00:01:03,590
+Its population is approximately four point nine million.
+
+12
+00:01:04,280 --> 00:01:10,960
+I want another row in this table to have this as a percentage of the total population for region wide
+
+13
+00:01:10,970 --> 00:01:11,450
+20.
+
+14
+00:01:12,830 --> 00:01:19,400
+So without using window functions, this can be done by joining an aggregated countries table grouped
+
+15
+00:01:19,400 --> 00:01:29,810
+by region ID and some population, that table can then be joined back to this table to give the total
+
+16
+00:01:29,810 --> 00:01:31,690
+population for Region 20.
+
+17
+00:01:32,600 --> 00:01:35,120
+We would then apply a mathematical operator.
+
+18
+00:01:36,330 --> 00:01:43,290
+To divide the population by country to the population, by region wide and multiply that by one hundred
+
+19
+00:01:43,290 --> 00:01:44,340
+to get the percentage.
+
+20
+00:01:45,120 --> 00:01:54,990
+So let me show you, in order to get the aggregated table, I would select some population.
+
+21
+00:01:57,100 --> 00:02:05,770
+And I also selected region and it because that's what we're grouping by from Libya and so countries
+
+22
+00:02:07,210 --> 00:02:11,130
+grouped by region to underscore it.
+
+23
+00:02:14,110 --> 00:02:18,640
+So now we have the total population for each region in the.
+
+24
+00:02:21,970 --> 00:02:26,710
+So what I want to do is join this back to the industrial countries table.
+
+25
+00:02:29,340 --> 00:02:30,960
+So this will be a sub query.
+
+26
+00:02:39,050 --> 00:02:48,500
+So first, let me select and then leave this blank as I'll populate the columns shortly from eBay and
+
+27
+00:02:48,500 --> 00:02:52,960
+ask all countries and I'll abbreviate as a an abbreviated, says B..
+
+28
+00:02:54,170 --> 00:02:56,090
+I didn't specify left join.
+
+29
+00:02:58,180 --> 00:03:06,450
+And then this is the table I would like to let you use the key word, A, to reach and underscore it,
+
+30
+00:03:06,820 --> 00:03:10,060
+it would be region under security.
+
+31
+00:03:12,090 --> 00:03:15,390
+Now, let's select the columns I would like to populate.
+
+32
+00:03:17,750 --> 00:03:22,670
+So from tabouli, which is the Ebor and School Countries table, I would like the name of the country,
+
+33
+00:03:24,020 --> 00:03:28,940
+I would like the region, I'd I would like the population.
+
+34
+00:03:30,390 --> 00:03:39,150
+And from Table B, I would like to the sum of population, which will be the region population, and
+
+35
+00:03:39,150 --> 00:03:46,440
+I'll just aliased that here as region underscore pop, so be your region.
+
+36
+00:03:46,770 --> 00:03:47,700
+Pundits call pop.
+
+37
+00:03:50,990 --> 00:03:58,400
+And now I would like a calculated formula which takes the population of the country divided by the region,
+
+38
+00:03:58,400 --> 00:04:03,290
+population multiplies it by 100 to get the percentage.
+
+39
+00:04:04,370 --> 00:04:05,810
+So that would be.
+
+40
+00:04:07,060 --> 00:04:20,290
+A population divided by bitter region and the scope multiplied by one hundred and I can use the round
+
+41
+00:04:20,560 --> 00:04:32,140
+function to round that to decimal places, and I'll call that as a percent of region total.
+
+42
+00:04:34,080 --> 00:04:34,710
+And hit, run.
+
+43
+00:04:38,820 --> 00:04:42,480
+So now, as you can see, the population of Ireland.
+
+44
+00:04:43,440 --> 00:04:51,300
+Is zero point six five percent of the total region population for region wide 20, the total of Israel
+
+45
+00:04:51,630 --> 00:04:57,120
+is zero point one nine percent of the total region population of region wide, 30 and so on.
+
+46
+00:04:58,820 --> 00:05:05,270
+As you can see, this works, but this isn't exactly a straightforward query for what is a relatively
+
+47
+00:05:05,270 --> 00:05:06,560
+straightforward task.
+
+48
+00:05:11,030 --> 00:05:17,510
+So let's have a quick look at the explainer plan, as you can see, the cost for this query is seven.
+
+49
+00:05:19,040 --> 00:05:20,780
+So we'll just keep that in mind for now.
+
+50
+00:05:23,810 --> 00:05:27,960
+Now, let me use analytical functions to answer the same question.
+
+51
+00:05:28,490 --> 00:05:33,650
+Don't worry about the syntax I'm about to use, a lot of it will seem unfamiliar to you if you're not
+
+52
+00:05:33,650 --> 00:05:35,830
+if you've not used analytical functions before.
+
+53
+00:05:36,470 --> 00:05:38,600
+But I will cover this in the coming lectures.
+
+54
+00:05:39,710 --> 00:05:41,210
+So let's get rid of this query.
+
+55
+00:05:43,050 --> 00:05:47,760
+And I type select name population
+
+56
+00:05:50,070 --> 00:05:51,000
+regionality.
+
+57
+00:05:52,810 --> 00:06:03,700
+And now for my analytical functions, so first I do some population use the over clause partitioned
+
+58
+00:06:03,940 --> 00:06:11,230
+by region on the right, this will give me the total population for the region.
+
+59
+00:06:11,240 --> 00:06:11,590
+It.
+
+60
+00:06:13,690 --> 00:06:17,920
+So I can actually just divide the population by this analytical function.
+
+61
+00:06:20,210 --> 00:06:27,230
+And then multiply it by one hundred to get the percentage and I can use the round function again, the
+
+62
+00:06:27,260 --> 00:06:40,400
+second place I can use the round function again to two decimal places as a percent of region topped.
+
+63
+00:06:42,140 --> 00:06:42,970
+What you say about.
+
+64
+00:06:45,890 --> 00:06:49,790
+From EPA and school countries.
+
+65
+00:06:55,750 --> 00:06:56,620
+So as you can see.
+
+66
+00:07:00,090 --> 00:07:00,900
+If I.
+
+67
+00:07:02,010 --> 00:07:08,910
+Try to find Ireland, so as you can see, if I find Ireland, we get the same answer of zero point six
+
+68
+00:07:08,910 --> 00:07:12,570
+five and we've been able to perform the same query.
+
+69
+00:07:15,030 --> 00:07:20,010
+Much more efficiently in terms of syntax, and if I look at the explain turn to this.
+
+70
+00:07:23,320 --> 00:07:24,070
+You can see.
+
+71
+00:07:26,740 --> 00:07:32,740
+That this time the cost is four compared to seven and there are much fewer operations being performed.
+
+72
+00:07:34,220 --> 00:07:38,480
+So as I was saying, analytical functions can be very powerful.
+
+73
+00:07:40,710 --> 00:07:46,470
+So actually, Slide's analytical functions are also referred to as window functions.
+
+74
+00:07:47,100 --> 00:07:51,430
+This is because they compute their results based on a window of one or more rows.
+
+75
+00:07:51,870 --> 00:07:56,580
+So in the example, we just covered the window with region on this call, Heidi.
+
+76
+00:07:58,150 --> 00:08:05,020
+Also, as you've seen, unlike aggregation functions, analytical functions do not collapse rows, but
+
+77
+00:08:05,020 --> 00:08:07,750
+they are still able to compute aggregated values.
+
+78
+00:08:09,750 --> 00:08:15,750
+The syntax for analytical functions is as follows first, you specify the analytical function.
+
+79
+00:08:16,260 --> 00:08:19,640
+This can be an aggregation function like some or count.
+
+80
+00:08:19,650 --> 00:08:25,440
+For example, I will cover these analytical functions in more detail in this section.
+
+81
+00:08:26,220 --> 00:08:30,660
+But for the following examples, in the next few lectures, we will be using some.
+
+82
+00:08:31,630 --> 00:08:38,500
+The over clause is what designates the function as an analytical function inside the over clause, we
+
+83
+00:08:38,500 --> 00:08:41,870
+have the partition by this is the grouping we would like.
+
+84
+00:08:42,220 --> 00:08:46,980
+So in our previous example, we had partition by region on the school ID.
+
+85
+00:08:47,890 --> 00:08:50,170
+We can also partition by more than one column.
+
+86
+00:08:50,830 --> 00:08:54,270
+You can also order your results by using the order by clause.
+
+87
+00:08:55,060 --> 00:09:00,310
+But note that this will order the results based on the results of the partition by clause.
+
+88
+00:09:01,310 --> 00:09:08,230
+So, for example, if we partition by region on the school I.D. and order by country name, then the
+
+89
+00:09:08,230 --> 00:09:11,800
+country names will be ordered for the region ID partition.
+
+90
+00:09:12,400 --> 00:09:14,980
+I'll elaborate on this in the coming lectures.
+
+91
+00:09:16,800 --> 00:09:21,660
+The window frame defines the window itself in our earlier example.
+
+92
+00:09:21,720 --> 00:09:28,560
+We did not define a window frame, so by default it was rose unbounded proceeding and unbounded following,
+
+93
+00:09:29,220 --> 00:09:32,850
+meaning to use all the rows in the partition.
+
+94
+00:09:34,470 --> 00:09:40,530
+One thing to note about the syntax is that although the partition by the order by and the window frame
+
+95
+00:09:40,530 --> 00:09:45,250
+clauses are not mandatory, they must follow the same order.
+
+96
+00:09:45,900 --> 00:09:52,590
+So if you are using a partition by an order by you must specify the partition by before the order.
+
+97
+00:09:53,700 --> 00:10:00,000
+And if you're using a window frame, in addition to a partition by an order by the window frame must
+
+98
+00:10:00,000 --> 00:10:01,830
+be specified at the end.
+
+99
+00:10:03,210 --> 00:10:08,700
+Don't worry if this is confusing for you right now, I'll dive into all aspects of the syntax and covid
+
+100
+00:10:08,700 --> 00:10:10,680
+different scenarios with examples.
+
+101
+00:10:11,490 --> 00:10:15,270
+By the end of this section, you should be confident with analytical functions.
+
+102
+00:10:16,140 --> 00:10:21,360
+But please do ensure you follow all the lectures and try to code along with me if you can.

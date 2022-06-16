@@ -1,0 +1,115 @@
+1
+00:00:01,690 --> 00:00:11,010
+So to do this, we can use the two to function on the order date, time field, so let's just select
+
+2
+00:00:11,020 --> 00:00:12,940
+start from the orders first.
+
+3
+00:00:17,400 --> 00:00:24,330
+So as I was saying, we could use that to try to function on the order date time field to just extract
+
+4
+00:00:25,320 --> 00:00:26,640
+the month and the year.
+
+5
+00:00:27,810 --> 00:00:28,770
+So let me show you.
+
+6
+00:00:38,570 --> 00:00:44,870
+As you can see now, if you're not familiar with the two child function, I suggest you refer to the
+
+7
+00:00:44,870 --> 00:00:51,530
+documentation online and I've also covered it in my previous course, the comprehensive Esquibel course.
+
+8
+00:00:53,090 --> 00:00:59,510
+OK, so from our query, we can select voter ID.
+
+9
+00:01:01,850 --> 00:01:04,280
+To try to take time
+
+10
+00:01:07,520 --> 00:01:12,220
+out Ailey's this as a month.
+
+11
+00:01:13,060 --> 00:01:17,900
+Yeah, and I'd also like to order Total.
+
+12
+00:01:22,360 --> 00:01:30,160
+And to find the difference, I'd like to order total subtracted by the analytical function, utilizing
+
+13
+00:01:30,160 --> 00:01:32,560
+Max on the order total.
+
+14
+00:01:34,200 --> 00:01:37,990
+And I'd like that over the partition.
+
+15
+00:01:44,240 --> 00:01:46,160
+By the month and year combination.
+
+16
+00:01:49,550 --> 00:01:53,150
+Now, remember, I can't use the alias of Monsignor.
+
+17
+00:01:55,230 --> 00:01:59,880
+Because the select statement is executed after the window function.
+
+18
+00:02:00,800 --> 00:02:10,940
+Refer to the query order of execution if you're unfamiliar with this, so now I'll aliased this as diff
+
+19
+00:02:11,240 --> 00:02:19,440
+from Max from the underscore orders and here.
+
+20
+00:02:21,650 --> 00:02:30,710
+So now for the month of January 2021, we can see that the order total in the current row of one hundred
+
+21
+00:02:30,710 --> 00:02:31,670
+one point seven.
+
+22
+00:02:34,010 --> 00:02:39,690
+Is two hundred and ninety eight point thirty three less than the maximum order total?
+
+23
+00:02:40,310 --> 00:02:41,450
+And if I scroll down.
+
+24
+00:02:44,400 --> 00:02:46,860
+While we're still in the position of January twenty one.
+
+25
+00:02:51,620 --> 00:02:54,060
+We can see that here the variance is zero.
+
+26
+00:02:54,740 --> 00:02:58,970
+So four hundred point zero three is our maximum order total.
+
+27
+00:03:00,920 --> 00:03:02,660
+And as we get to the next partition.
+
+28
+00:03:06,060 --> 00:03:12,560
+Which is February twenty one, again, we can see that on maximum order total is five one seven point
+
+29
+00:03:12,560 --> 00:03:15,680
+six nine, and that is where the variance is taken from.

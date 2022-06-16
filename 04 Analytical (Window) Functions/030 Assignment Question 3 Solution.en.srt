@@ -1,0 +1,175 @@
+1
+00:00:01,430 --> 00:00:09,170
+So for this question, we need to first define a window frame using ranges and order or data based on
+
+2
+00:00:09,170 --> 00:00:09,770
+month and year.
+
+3
+00:00:11,040 --> 00:00:17,220
+So we can use the to try to function again to get the month in year combination, but we cannot apply
+
+4
+00:00:17,220 --> 00:00:22,400
+this to arrange range window frame because ranges do not accept characters.
+
+5
+00:00:23,160 --> 00:00:32,520
+So we can be a bit creative here and convert or to CHA output to a no output and use a format mask that
+
+6
+00:00:32,520 --> 00:00:33,780
+suits this requirement.
+
+7
+00:00:34,830 --> 00:00:43,420
+So let me show you so I'll select order date time from the borders.
+
+8
+00:00:46,470 --> 00:00:58,530
+Now I can use that to try to convert this order the daytime into four digit year and a month combination.
+
+9
+00:01:01,290 --> 00:01:07,590
+And will this although this looks like in America after the trial function and choose, it's a character
+
+10
+00:01:07,590 --> 00:01:15,450
+out there so I can then use the two number function to convert this to a number?
+
+11
+00:01:16,360 --> 00:01:23,020
+And now we can apply a range window frame, we're using ranges instead of rows because we're interested
+
+12
+00:01:23,140 --> 00:01:26,520
+in the entire value for the current month and year.
+
+13
+00:01:27,190 --> 00:01:35,420
+So when we're on September of 2020, we want to calculate the total for September 2020 as this group.
+
+14
+00:01:35,950 --> 00:01:38,470
+And if we subtract one from this, it will be.
+
+15
+00:01:39,600 --> 00:01:41,160
+August of twenty twenty.
+
+16
+00:01:42,420 --> 00:01:49,810
+Whereas if we were to use Rose, we would only be doing this at every level, so ranges suit our requirements.
+
+17
+00:01:50,520 --> 00:01:55,920
+So the following month is one unit higher and the previous month is one unit lower.
+
+18
+00:01:59,070 --> 00:01:59,400
+Great.
+
+19
+00:02:00,800 --> 00:02:02,540
+So let's start populating our query.
+
+20
+00:02:03,440 --> 00:02:11,510
+I would like to order it and I'm just going to copy this and for output I'll leave.
+
+21
+00:02:11,510 --> 00:02:17,990
+This is to try and convert this to a month in year combination for readability.
+
+22
+00:02:21,080 --> 00:02:29,450
+And I'll also get the order total and now for our window function, I'd like to use the average segregation
+
+23
+00:02:30,230 --> 00:02:35,870
+on the order total over partition.
+
+24
+00:02:38,810 --> 00:02:39,340
+By.
+
+25
+00:02:40,890 --> 00:02:44,100
+Would the date time in the year and month former?
+
+26
+00:02:47,430 --> 00:02:49,110
+Order by the same.
+
+27
+00:02:50,230 --> 00:02:52,360
+And use the range as to proceed.
+
+28
+00:02:54,580 --> 00:02:58,540
+This is the same as saying range between two preceding and current road.
+
+29
+00:03:00,740 --> 00:03:04,520
+And I'll use this as average three months.
+
+30
+00:03:08,640 --> 00:03:13,500
+And now I can take the order total and subtract that.
+
+31
+00:03:15,370 --> 00:03:16,600
+From this window function.
+
+32
+00:03:26,290 --> 00:03:29,170
+An 80s that has variants.
+
+33
+00:03:31,530 --> 00:03:32,250
+And here, Ron.
+
+34
+00:03:34,800 --> 00:03:44,520
+So now you can see that the average three months for March of twenty twenty is one hundred and sixty
+
+35
+00:03:44,520 --> 00:03:45,540
+four point seven.
+
+36
+00:03:47,390 --> 00:03:53,800
+And the variance in the current rose context is thirty four point seven, and that will continue.
+
+37
+00:03:55,200 --> 00:04:00,840
+As we go down to the next valley, which is April 20, 20, and that will take the rolling average,
+
+38
+00:04:01,020 --> 00:04:06,360
+and because we've only got one month previous to that, that will be the rolling average of March and
+
+39
+00:04:06,360 --> 00:04:06,750
+April.
+
+40
+00:04:11,160 --> 00:04:15,720
+So this question was a little bit trickier, and we had to be a bit creative in terms of getting our
+
+41
+00:04:15,720 --> 00:04:15,890
+out.
+
+42
+00:04:16,650 --> 00:04:18,900
+This isn't the only way to get the result.
+
+43
+00:04:19,200 --> 00:04:20,610
+This is just one of the ways.
+
+44
+00:04:21,330 --> 00:04:24,560
+And if you find a more creative way, then that's also fine.

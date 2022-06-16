@@ -1,0 +1,18 @@
+
+                <html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>032 BONUS (Running Totals)_ Assignment Question 4</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><h4>Create the following view:</h4><p><br></p><h4>CREATE VIEW V_ORDER_YEAR_MONTH AS</h4><h4>(SELECT TO_CHAR(ORDER_DATETIME, 'YYYY-MM') AS YEAR_MONTH,</h4><h4>SUM(ORDER_TOTAL) AS YEAR_MONTH_TOTAL</h4><h4>FROM V_ORDERS</h4><h4>GROUP BY TO_CHAR(ORDER_DATETIME,'YYYY-MM'));</h4><p><br></p><h4>On the above view use Analytical Functions to create a running total column using the YEAR_MONTH_TOTAL field ordered&nbsp; by the YEAR_MONTH field in ascending order</h4></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
+                

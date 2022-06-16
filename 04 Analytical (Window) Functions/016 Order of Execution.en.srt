@@ -1,0 +1,23 @@
+1
+00:00:00,450 --> 00:00:07,800
+You'll already be familiar with the escarole query order of execution, as you know, the from clause
+
+2
+00:00:07,800 --> 00:00:13,860
+is evaluated first, followed by any table joins and then Rollerball facilities such as the where clause.
+
+3
+00:00:15,290 --> 00:00:19,610
+You then have your group by Claus's and having close.
+
+4
+00:00:20,770 --> 00:00:26,570
+Window functions are evaluated after the having close, but before the select statement.
+
+5
+00:00:27,100 --> 00:00:33,460
+So that's just something to keep in mind in terms of where the window functions, a.k.a. analytical
+
+6
+00:00:33,460 --> 00:00:37,410
+functions fit in to the escarole query order of execution.

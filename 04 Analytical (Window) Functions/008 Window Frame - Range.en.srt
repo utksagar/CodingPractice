@@ -1,0 +1,159 @@
+1
+00:00:01,830 --> 00:00:06,080
+Let's now move on to using range to define our window frame.
+
+2
+00:00:09,260 --> 00:00:16,910
+I want to partition by regionality and order by subregions, it but first let's select all the columns
+
+3
+00:00:16,910 --> 00:00:17,990
+from our countries table.
+
+4
+00:00:26,030 --> 00:00:37,970
+And now for the analytical function of some population, again, over partition by region wide order
+
+5
+00:00:38,150 --> 00:00:41,060
+by sub region it.
+
+6
+00:00:43,240 --> 00:00:51,790
+And define the range between one proceeding and one following.
+
+7
+00:00:54,160 --> 00:00:54,760
+As a.
+
+8
+00:00:57,100 --> 00:01:03,070
+From EPA, undisclosed countries and here.
+
+9
+00:01:09,140 --> 00:01:16,530
+So now we're using values from the subregion, it in our range as that is in the autobio clause.
+
+10
+00:01:17,120 --> 00:01:24,770
+So by saying one proceeding and one following, it means that when we are looking at subregion it of
+
+11
+00:01:24,810 --> 00:01:30,470
+ten, we're looking for the range in each individual partition.
+
+12
+00:01:32,200 --> 00:01:34,870
+With the subregion, it is nine and 11.
+
+13
+00:01:39,920 --> 00:01:44,570
+So when we were in and it when we were in the region, 90, 10 partition.
+
+14
+00:01:47,640 --> 00:01:51,990
+We can see subregion ID 10 and the next subregion, it is 80.
+
+15
+00:01:53,620 --> 00:02:01,150
+So we don't have one proceeding and one following in this context, because 80 is actually 70 following
+
+16
+00:02:01,330 --> 00:02:01,690
+10.
+
+17
+00:02:03,250 --> 00:02:05,920
+So this valley, which is six hundred and forty eight million.
+
+18
+00:02:07,800 --> 00:02:14,190
+Just takes the value from the current range, which will be the regionality 10 and the subregion region
+
+19
+00:02:14,760 --> 00:02:15,120
+10.
+
+20
+00:02:17,020 --> 00:02:19,630
+So let's try Zevo proceeding.
+
+21
+00:02:20,570 --> 00:02:29,720
+And 74 following, because we know in our petition for Region 10, we have subregion eight, 10 and
+
+22
+00:02:29,720 --> 00:02:31,090
+subregion ID 80.
+
+23
+00:02:31,580 --> 00:02:40,280
+So if I do zero proceeding and 70 following, I expect this value for the partition region at 10 and
+
+24
+00:02:40,280 --> 00:02:48,380
+subregion 80 10 to increase to be the total for region and 10 because 70 following, which is 10 plus
+
+25
+00:02:48,380 --> 00:02:49,690
+70 is 80.
+
+26
+00:02:50,630 --> 00:02:51,830
+So let's test that theory.
+
+27
+00:02:52,820 --> 00:02:54,050
+I'll just copy this, Al.
+
+28
+00:02:57,570 --> 00:03:03,680
+We need to be 10 years zero preceding and 70 following.
+
+29
+00:03:04,420 --> 00:03:06,650
+Get rid of that comma and run.
+
+30
+00:03:08,960 --> 00:03:09,950
+And now, as you can see.
+
+31
+00:03:12,780 --> 00:03:17,700
+You'll recognize that just over one billion is actually the total for each night 10.
+
+32
+00:03:20,070 --> 00:03:21,390
+And if I scroll down.
+
+33
+00:03:23,760 --> 00:03:26,430
+Six for eight million plus three six, seven million.
+
+34
+00:03:27,700 --> 00:03:28,960
+Is this value over here?
+
+35
+00:03:31,620 --> 00:03:34,350
+And when we are in the context of Canada, which is.
+
+36
+00:03:35,430 --> 00:03:39,020
+So which is region wide 10 and subregion 80.
+
+37
+00:03:40,770 --> 00:03:49,890
+We get the same value, and this is because zero preceding 80 is 80 and 70, following would be one
+
+38
+00:03:49,890 --> 00:03:50,700
+hundred and fifty.
+
+39
+00:03:52,710 --> 00:03:59,370
+But we don't have subregion ID in the range of 80 to 150 as we go to the next partition.
+
+40
+00:04:01,480 --> 00:04:07,750
+So we know the value here, we just take the value for Regenhard 10 and subregion 80.

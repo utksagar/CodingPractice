@@ -1,0 +1,127 @@
+1
+00:00:00,300 --> 00:00:06,930
+I wanted to show a quick one analytical functions when using single bounce, specifically the following
+
+2
+00:00:06,930 --> 00:00:08,820
+single bound in your window frame.
+
+3
+00:00:10,410 --> 00:00:17,290
+As you know, Rose, and proceeding is the same as saying rose between and proceeding and current work.
+
+4
+00:00:17,940 --> 00:00:22,380
+Let me show you some iSelect name.
+
+5
+00:00:25,310 --> 00:00:26,150
+Population.
+
+6
+00:00:28,500 --> 00:00:34,120
+For that region Heidi and sub region, Heidi.
+
+7
+00:00:35,670 --> 00:00:48,570
+And now that an analytical function where I am partitioning by region wide and subregional
+
+8
+00:00:51,870 --> 00:00:57,110
+ordering by sub region it.
+
+9
+00:00:59,040 --> 00:01:02,820
+And for the window frame, I'll specify rose to preceding.
+
+10
+00:01:04,810 --> 00:01:06,340
+And now occupy this.
+
+11
+00:01:10,590 --> 00:01:24,670
+And I will change the window frame to rose between two proceeding and current row from undisclosed countries.
+
+12
+00:01:26,070 --> 00:01:31,890
+So these two should be exactly the same because those two proceeding should be the same, the same rows
+
+13
+00:01:31,890 --> 00:01:33,900
+between two proceeding and current.
+
+14
+00:01:36,650 --> 00:01:37,520
+And as you can see.
+
+15
+00:01:38,600 --> 00:01:39,950
+If you compare the two numbers.
+
+16
+00:01:42,610 --> 00:01:43,870
+There will be exactly the same.
+
+17
+00:01:45,440 --> 00:01:48,170
+Even as we get to the next partition, surely.
+
+18
+00:01:49,940 --> 00:01:50,650
+And here we go.
+
+19
+00:01:54,120 --> 00:02:01,260
+So, as I said, Rose to proceeding is the same as rose between two proceeding and current road rules
+
+20
+00:02:01,260 --> 00:02:07,120
+and following means the same thing as rose between current rule and following.
+
+21
+00:02:08,430 --> 00:02:13,380
+But when we use the following as a single bound, for some reason the query fails.
+
+22
+00:02:14,370 --> 00:02:15,060
+Let me show you.
+
+23
+00:02:16,470 --> 00:02:18,810
+So I will comment this out.
+
+24
+00:02:21,140 --> 00:02:23,840
+And I will change proceeding to following.
+
+25
+00:02:26,700 --> 00:02:26,950
+Were.
+
+26
+00:02:29,790 --> 00:02:33,210
+Missing keyword now if I change this to preceding.
+
+27
+00:02:36,590 --> 00:02:44,060
+The query works, so if you need an following, then a workaround would be to take.
+
+28
+00:02:46,450 --> 00:02:47,200
+Between.
+
+29
+00:02:51,250 --> 00:02:57,220
+Current road and to following, and if I come to south.
+
+30
+00:03:01,070 --> 00:03:03,950
+You can see that works and we already know.
+
+31
+00:03:04,970 --> 00:03:11,960
+That between current and following should be the same as to follow me, so I just wanted to flag that
+
+32
+00:03:11,960 --> 00:03:14,360
+as a bit of a quirk to look out for.

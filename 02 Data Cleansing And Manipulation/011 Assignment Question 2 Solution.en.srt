@@ -1,0 +1,67 @@
+1
+00:00:01,990 --> 00:00:09,700
+So first off, run the Esquibel command to prepare for this assignment, so run them one at a time.
+
+2
+00:00:09,940 --> 00:00:11,470
+So first I'll create the table.
+
+3
+00:00:13,860 --> 00:00:16,470
+Then I will insert each record.
+
+4
+00:00:19,070 --> 00:00:19,940
+Into the table.
+
+5
+00:00:28,450 --> 00:00:30,300
+So now I'll query the table.
+
+6
+00:00:40,250 --> 00:00:47,210
+So from the solution, we can see that we want the column holding the number of goals to be called goals
+
+7
+00:00:47,630 --> 00:00:54,770
+and the column holding the years to be called season, and it also appears that the season and values
+
+8
+00:00:54,770 --> 00:00:55,670
+have been aliased.
+
+9
+00:00:55,670 --> 00:00:59,390
+So year twenty eighteen is aliased to twenty eighteen.
+
+10
+00:01:01,520 --> 00:01:08,090
+To take one pill at this table, we type until after the next afternoon goes preseason.
+
+11
+00:01:10,500 --> 00:01:14,880
+And we had goals as the name of the column that contains the aggregated measure.
+
+12
+00:01:16,670 --> 00:01:17,210
+For.
+
+13
+00:01:18,210 --> 00:01:27,810
+And then season is the name of the new column that holds the existing column names in and then we write
+
+14
+00:01:27,810 --> 00:01:39,080
+here twenty eighteen as twenty eighteen year and school twenty nineteen has twenty nineteen.
+
+15
+00:01:40,290 --> 00:01:44,160
+Yeah, twenty twenty has twenty twenty.
+
+16
+00:01:45,930 --> 00:01:46,690
+And here, right?
+
+17
+00:01:50,480 --> 00:01:54,170
+And here are our results, uninhibited.

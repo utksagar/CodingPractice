@@ -1,0 +1,18 @@
+
+                <html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>022 Assignment Data Preparation (SQL Code)</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><blockquote><p>CREATE VIEW V_ORDERS AS</p><p>(SELECT A.*, B.ORDER_TOTAL</p><p>FROM ORDERS A</p><p>LEFT JOIN</p><p>(SELECT ORDER_ID, SUM(UNIT_PRICE * QUANTITY) AS ORDER_TOTAL FROM ORDER_ITEMS GROUP BY ORDER_ID) B</p><p>ON A.ORDER_ID = B.ORDER_ID</p><p>WHERE A.ORDER_STATUS = 'COMPLETE');</p></blockquote></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
+                

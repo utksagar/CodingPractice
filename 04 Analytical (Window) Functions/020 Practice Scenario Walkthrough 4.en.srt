@@ -1,0 +1,55 @@
+1
+00:00:02,470 --> 00:00:09,490
+For this scenario, let's order our countries by population in ascending order and create a running
+
+2
+00:00:09,490 --> 00:00:16,460
+total for the population which keeps adding on the next country's population as we go down to.
+
+3
+00:00:18,070 --> 00:00:22,930
+So what you need to do here is select the country's name.
+
+4
+00:00:25,570 --> 00:00:34,180
+Population and then use the some aggregation on population followed by the other groups.
+
+5
+00:00:36,130 --> 00:00:45,500
+Order by population ascending, just type AFSC, and that would be the default as well.
+
+6
+00:00:46,360 --> 00:00:56,850
+And then for hour window frame, we type Veronese between inbounded proceeding and current row.
+
+7
+00:00:57,640 --> 00:01:09,610
+And we'll call this a running total population from Epper underscore countries.
+
+8
+00:01:15,020 --> 00:01:16,550
+And let me just increase.
+
+9
+00:01:18,080 --> 00:01:19,700
+The road limit to five hundred.
+
+10
+00:01:24,090 --> 00:01:32,700
+And now we have the running total in the last column that is increasing as we go down each road and
+
+11
+00:01:32,700 --> 00:01:35,490
+adding on the population of the next country.
+
+12
+00:01:37,160 --> 00:01:42,800
+And as we get to the end, we have the total population of seven point seven billion.
+
+13
+00:01:45,180 --> 00:01:52,490
+I know that we could have just defined our window frame as Rose Inbounded proceeding, and it would
+
+14
+00:01:52,490 --> 00:01:53,780
+have given us the same result.

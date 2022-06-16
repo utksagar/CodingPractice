@@ -1,0 +1,119 @@
+1
+00:00:01,320 --> 00:00:09,750
+For this scenario, we want to flag a country that is in the top 10 percentile for its region, so to
+
+2
+00:00:09,750 --> 00:00:11,760
+do this, we can use percent rank.
+
+3
+00:00:12,420 --> 00:00:20,970
+We must order the population from highest to lowest and anything below or equal to zero point one,
+
+4
+00:00:21,450 --> 00:00:27,930
+which is the percent rank and is equivalent to the top 10 percentile because remember, percent rank
+
+5
+00:00:27,930 --> 00:00:29,180
+goes from zero to one.
+
+6
+00:00:29,940 --> 00:00:31,290
+She needs to be flagged.
+
+7
+00:00:32,290 --> 00:00:40,450
+So let's select a name which is the country name population, just so we have a reference of the population
+
+8
+00:00:40,450 --> 00:00:47,560
+for each country and then apply percent rank, we don't need to specify anything in the parameter,
+
+9
+00:00:47,560 --> 00:00:50,170
+four percent rank and in the over clause.
+
+10
+00:00:50,350 --> 00:01:00,070
+We must partition by region idea and order by population dissenting because we want from highest to
+
+11
+00:01:00,070 --> 00:01:01,540
+lowest for each partition.
+
+12
+00:01:04,900 --> 00:01:14,350
+And I'll select from Evea undisclosed countries now we have not finished the query, but I just want
+
+13
+00:01:14,350 --> 00:01:16,320
+to see what this looks like so far.
+
+14
+00:01:19,620 --> 00:01:27,750
+So now let me actually add regionality for clarity as well so we can see the partitions.
+
+15
+00:01:28,740 --> 00:01:41,400
+So for regionality 10, we can see that the partition we would like is up to Canada because after that
+
+16
+00:01:41,700 --> 00:01:43,350
+we get above zero point one.
+
+17
+00:01:43,380 --> 00:01:48,030
+So the top ten percentile countries in region 10 from the USA.
+
+18
+00:01:49,000 --> 00:01:49,870
+Up to Canada.
+
+19
+00:01:51,880 --> 00:01:59,020
+So we need to flag these as, let's say one and the rest is zero and the same as we go to the next partition
+
+20
+00:01:59,560 --> 00:02:00,220
+of 20.
+
+21
+00:02:01,320 --> 00:02:08,790
+This time we have the Russian Federation, Germany, UK, all the way up to Spain, which we'd like
+
+22
+00:02:08,790 --> 00:02:09,390
+to include.
+
+23
+00:02:10,230 --> 00:02:16,170
+So to do this, we can use a case statement that will keep this analytical function here just for reference,
+
+24
+00:02:16,620 --> 00:02:17,610
+and I'll copy it.
+
+25
+00:02:20,230 --> 00:02:22,630
+So I'll type case when.
+
+26
+00:02:24,620 --> 00:02:32,930
+And my condition, and I would like this less than or equal to zero point one dinoflagellates, one
+
+27
+00:02:33,560 --> 00:02:39,620
+else zero, and I'll end as top 10.
+
+28
+00:02:42,030 --> 00:02:42,940
+Acento.
+
+29
+00:02:45,970 --> 00:02:46,670
+You, Ron.
+
+30
+00:02:48,090 --> 00:02:54,950
+Now we have a flag for the top 10 percentile countries partitioned by each region.

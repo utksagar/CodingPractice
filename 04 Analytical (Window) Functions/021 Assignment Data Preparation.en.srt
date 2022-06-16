@@ -1,0 +1,187 @@
+1
+00:00:00,480 --> 00:00:06,300
+For the following assignment, questions will be using the customer orders data model specifically will
+
+2
+00:00:06,300 --> 00:00:10,650
+be creating a view that combines the orders table and the order items table.
+
+3
+00:00:11,600 --> 00:00:15,920
+Now, I'll show you how to create this view, so please make sure you're following along with the code
+
+4
+00:00:15,920 --> 00:00:16,760
+I'm about to run.
+
+5
+00:00:17,030 --> 00:00:19,630
+Otherwise, you'll not be able to do the assignment questions.
+
+6
+00:00:21,010 --> 00:00:25,930
+Now, I want to create a view that contains all the data from the orders table.
+
+7
+00:00:32,380 --> 00:00:40,600
+But what we're missing from the audit table is the total order value, and that information is in the
+
+8
+00:00:40,600 --> 00:00:41,650
+order items table.
+
+9
+00:00:45,260 --> 00:00:52,760
+So what we need at an older level is the unit price times the quantity to give us the total order value.
+
+10
+00:00:53,820 --> 00:01:00,110
+So what I want to do is join the orders table to the order items table and create a view from this joint,
+
+11
+00:01:01,350 --> 00:01:07,170
+but I can't just join the orders table to the order items table because the order I.D. is not unique
+
+12
+00:01:07,170 --> 00:01:08,400
+in the order items table.
+
+13
+00:01:08,820 --> 00:01:13,800
+So I'll need to group it before I can do the joint and I can group it on order.
+
+14
+00:01:14,760 --> 00:01:17,700
+So first for the query.
+
+15
+00:01:19,310 --> 00:01:26,870
+I'll select and leave, the column is blank for now, what I know is I want to select orders as I left
+
+16
+00:01:26,870 --> 00:01:27,230
+table.
+
+17
+00:01:27,770 --> 00:01:28,850
+I'll use that as a.
+
+18
+00:01:31,630 --> 00:01:36,970
+And it doesn't really matter what kind of joint I do, because I know that the order I.D. will match
+
+19
+00:01:36,970 --> 00:01:43,630
+on the orders table and the order items table, but I'll do a left joint, so left joint and this needs
+
+20
+00:01:43,630 --> 00:01:44,560
+to be on subquery.
+
+21
+00:01:45,820 --> 00:01:57,280
+So I'll select order ID and then the son of the unit price times quantity and I'll alias that.
+
+22
+00:01:57,280 --> 00:02:12,310
+As for the total from order items and group that I order, underscore it and is the sub query as B and
+
+23
+00:02:12,310 --> 00:02:17,080
+the joint will be done on a tall order, it equals B..
+
+24
+00:02:17,350 --> 00:02:18,630
+The order idee.
+
+25
+00:02:21,820 --> 00:02:26,860
+Now, one other thing to note is a very select staff from orders.
+
+26
+00:02:32,960 --> 00:02:35,540
+Is that I want the order status to be complete.
+
+27
+00:02:35,930 --> 00:02:38,980
+I do not want to include incomplete or refunded orders.
+
+28
+00:02:40,280 --> 00:02:50,720
+So a lot of vehicles here to say where a to order status equals and caps complete.
+
+29
+00:02:55,280 --> 00:03:02,680
+Now for the fields, I'd like all the fields here from the oldest table, so I'll type a star, use
+
+30
+00:03:02,690 --> 00:03:10,610
+a wild card and from the subquery, which I'm performing the joint on, all I really want is this order
+
+31
+00:03:10,610 --> 00:03:11,030
+total.
+
+32
+00:03:16,510 --> 00:03:17,620
+So let's run this query.
+
+33
+00:03:17,970 --> 00:03:20,620
+I know it's not been created as a verb yet.
+
+34
+00:03:23,520 --> 00:03:24,560
+Here is our results.
+
+35
+00:03:27,900 --> 00:03:31,670
+And as you can see, we've got the Oldroyd with the total for that order.
+
+36
+00:03:33,340 --> 00:03:40,300
+So now to create The View, I'll put this query in brackets.
+
+37
+00:03:45,740 --> 00:03:52,010
+And I'll write crazy and I'll call my veto orders as.
+
+38
+00:03:55,200 --> 00:04:01,230
+Terminate with the semicolon and execute this whole query that has been created.
+
+39
+00:04:03,000 --> 00:04:07,680
+If I go in to my object browser filter by these.
+
+40
+00:04:09,030 --> 00:04:11,580
+You should have a veto orders.
+
+41
+00:04:11,610 --> 00:04:12,000
+The.
+
+42
+00:04:17,880 --> 00:04:18,600
+OK, great.
+
+43
+00:04:18,810 --> 00:04:23,940
+So now we're ready to move on to the assignment questions, I've included a healthy number of these
+
+44
+00:04:23,970 --> 00:04:27,550
+because I believe the best way to master analytical functions is with practice.
+
+45
+00:04:28,050 --> 00:04:33,120
+So don't worry, if you find some of these questions difficult, review the solutions and make sure
+
+46
+00:04:33,120 --> 00:04:34,290
+you understand the logic.
+
+47
+00:04:34,680 --> 00:04:36,960
+And like I said, keep on practicing.

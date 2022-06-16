@@ -1,0 +1,203 @@
+1
+00:00:01,260 --> 00:00:05,460
+Pivot allows you to transpose Roe values into columns.
+
+2
+00:00:07,150 --> 00:00:14,050
+The syntax is quite complicated to look at first, but it becomes familiar with practice in your pre
+
+3
+00:00:14,050 --> 00:00:14,860
+pivot table.
+
+4
+00:00:14,980 --> 00:00:16,900
+You essentially have columns of interest.
+
+5
+00:00:17,680 --> 00:00:23,500
+One column will contain the field you want to aggregate, along with the column that contains the values
+
+6
+00:00:23,500 --> 00:00:25,030
+you want to convert into columns.
+
+7
+00:00:26,110 --> 00:00:33,310
+So, for example, if you have a job column with Manager Plurk and President and values, it will convert
+
+8
+00:00:33,310 --> 00:00:35,440
+these values into their own columns.
+
+9
+00:00:36,980 --> 00:00:44,870
+In the pivot line, in the bottom you type pivot, followed by parentheses, you start with the aggregation
+
+10
+00:00:44,870 --> 00:00:45,380
+function.
+
+11
+00:00:46,350 --> 00:00:50,820
+Then type four, followed by the column, you want to pivot.
+
+12
+00:00:53,110 --> 00:00:54,070
+You then type.
+
+13
+00:00:55,060 --> 00:01:03,330
+In followed by the list of values in that column, inside parentheses, note that you cannot use a sub
+
+14
+00:01:03,340 --> 00:01:05,140
+query to generate that list.
+
+15
+00:01:05,260 --> 00:01:09,740
+It has to be typed in and finally right at the top.
+
+16
+00:01:10,030 --> 00:01:14,410
+We type select stock as this selects the pivoted columns.
+
+17
+00:01:17,680 --> 00:01:18,130
+OK.
+
+18
+00:01:19,140 --> 00:01:23,640
+So let's do an example, let me query the EPA under article countries table.
+
+19
+00:01:32,880 --> 00:01:42,480
+Now, what if I wanted a matrix of values showing me subregion along the roads and regionality along
+
+20
+00:01:42,480 --> 00:01:43,080
+the columns?
+
+21
+00:01:46,600 --> 00:01:49,750
+With the population totals as the values.
+
+22
+00:01:51,370 --> 00:01:53,770
+Well, we can use Pivot to do this.
+
+23
+00:01:57,060 --> 00:02:05,280
+So I can start by typing Select Star from and that is my top level select statement and in the first
+
+24
+00:02:05,280 --> 00:02:11,130
+parenthesis we type select followed by the columns of interest.
+
+25
+00:02:12,600 --> 00:02:23,460
+We would one region and subregion ID, as we need these for our Matrix film, and we also want to aggregate
+
+26
+00:02:23,460 --> 00:02:30,240
+the population field, so we want population to and it's from the EPA underscore countries table.
+
+27
+00:02:33,170 --> 00:02:35,060
+We now type in our pivot clothes.
+
+28
+00:02:37,190 --> 00:02:45,220
+Followed by the aggregation, which is the sum of population, and we're doing this for the region idee.
+
+29
+00:02:47,540 --> 00:02:53,900
+We then type in and type in the list of values in the region and field as they will be turned.
+
+30
+00:02:55,140 --> 00:02:55,950
+Intercoms.
+
+31
+00:02:57,470 --> 00:03:08,360
+You can do this by typing select distinct region, Heidi, from eBay and countries, and we will now
+
+32
+00:03:08,510 --> 00:03:10,250
+see a list of the values.
+
+33
+00:03:11,380 --> 00:03:12,520
+And there's only five.
+
+34
+00:03:14,000 --> 00:03:24,230
+So in my list, I can take 10, 20, 30, 40, 50 and terminate with a semicolon and note, I would
+
+35
+00:03:24,230 --> 00:03:27,630
+have to include these in single quotes if they were character strings.
+
+36
+00:03:29,210 --> 00:03:30,160
+So let's it run.
+
+37
+00:03:32,150 --> 00:03:33,050
+OK, great.
+
+38
+00:03:33,380 --> 00:03:40,970
+So here's our matrix, and we can see that region 30 has a population of just over seven hundred million
+
+39
+00:03:41,450 --> 00:03:42,290
+for subregions.
+
+40
+00:03:42,500 --> 00:03:43,310
+One hundred and ten.
+
+41
+00:03:45,090 --> 00:03:49,860
+And around about one point nine billion for for subregion and 30.
+
+42
+00:03:51,140 --> 00:03:52,640
+So we now have a Matrix V.
+
+43
+00:03:56,560 --> 00:04:00,560
+And just to note that we chose the aggregation field to be population.
+
+44
+00:04:01,480 --> 00:04:03,850
+We can also choose it to be number of countries.
+
+45
+00:04:04,210 --> 00:04:07,540
+And if that's the case, we don't even need the population field.
+
+46
+00:04:07,990 --> 00:04:13,040
+We can actually just account for the region wide field.
+
+47
+00:04:14,530 --> 00:04:15,730
+And if I hit run again.
+
+48
+00:04:18,210 --> 00:04:21,510
+We now have the number of countries in The Matrix.
+
+49
+00:04:22,110 --> 00:04:26,790
+So there are five countries for regionality, 30 and subregion.
+
+50
+00:04:27,050 --> 00:04:32,400
+One hundred and ten and nine for region 30 and subregion 30.
+
+51
+00:04:33,720 --> 00:04:37,110
+So that was just a lecture showing you how to pivot your data.

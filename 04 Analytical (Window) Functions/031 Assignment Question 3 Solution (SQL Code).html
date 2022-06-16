@@ -1,0 +1,18 @@
+
+                <html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>031 Assignment Question 3 Solution (SQL Code)</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><blockquote><p>SELECT</p><p>ORDER_ID,</p><p>TO_CHAR(ORDER_DATETIME,'MM-YY') as MONTH_YEAR,</p><p>ORDER_TOTAL,</p><p>AVG(ORDER_TOTAL) OVER(PARTITION BY TO_NUMBER(TO_CHAR(ORDER_DATETIME,'YYMM')) ORDER BY TO_NUMBER(TO_CHAR(ORDER_DATETIME,'YYMM')) RANGE 2 PRECEDING) AS AVG3MONTH,</p><p>ORDER_TOTAL - AVG(ORDER_TOTAL) OVER(PARTITION BY TO_NUMBER(TO_CHAR(ORDER_DATETIME,'YYMM')) ORDER BY TO_NUMBER(TO_CHAR(ORDER_DATETIME,'YYMM')) RANGE 2 PRECEDING) AS VAR</p><p>FROM</p><p>V_ORDERS;</p></blockquote></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
+                

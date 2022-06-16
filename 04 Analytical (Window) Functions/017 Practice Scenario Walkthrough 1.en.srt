@@ -1,0 +1,63 @@
+1
+00:00:00,840 --> 00:00:06,870
+OK, so for this scenario, what we'd like to do is find the difference between the country's population
+
+2
+00:00:07,020 --> 00:00:15,270
+in the current Roe vs. the population of the country with the highest population in the entire table.
+
+3
+00:00:16,890 --> 00:00:21,570
+So to do that, we take select name population.
+
+4
+00:00:22,820 --> 00:00:24,860
+And then use the emacs function.
+
+5
+00:00:27,440 --> 00:00:30,350
+On the population field over.
+
+6
+00:00:32,300 --> 00:00:37,480
+And we can just leave this blank because we'd like to find the max population for the entire table.
+
+7
+00:00:41,360 --> 00:00:48,680
+From EPA and school countries now, we still need to calculate the variance, but if I execute this
+
+8
+00:00:48,680 --> 00:00:50,700
+query, I just want to see what it looks like.
+
+9
+00:00:51,710 --> 00:00:56,430
+So we have a maximum population here, which is one point four billion, and I believe that's China.
+
+10
+00:00:57,050 --> 00:01:00,910
+And then we have the population for the country in the current rate.
+
+11
+00:01:01,310 --> 00:01:02,900
+So we just need to do this.
+
+12
+00:01:02,900 --> 00:01:05,420
+Were subtracted by this very.
+
+13
+00:01:06,500 --> 00:01:12,030
+To find the difference between the current country's population and the population of the country with
+
+14
+00:01:12,030 --> 00:01:21,980
+the maximal population, so that which is the population minus and I can just copy this analytical function
+
+15
+00:01:22,550 --> 00:01:28,160
+and that as diff from Max.
+
+16
+00:01:31,940 --> 00:01:38,740
+And you can see the population of Ireland is quite a lot lower than the population of China.

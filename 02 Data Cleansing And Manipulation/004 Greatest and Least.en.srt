@@ -1,0 +1,67 @@
+1
+00:00:00,920 --> 00:00:07,340
+The greatest and least functions take a list of expressions and return either the lowest or highest
+
+2
+00:00:07,340 --> 00:00:08,450
+value from that list.
+
+3
+00:00:09,780 --> 00:00:15,510
+This can be useful if you want to cap a salary, for example, no one should earn less than five hundred
+
+4
+00:00:15,510 --> 00:00:16,850
+or higher than three thousand.
+
+5
+00:00:18,060 --> 00:00:22,350
+The first expression in that list is used to determine the date to type.
+
+6
+00:00:26,590 --> 00:00:33,020
+The syntax for greatest and least is to put in a list of expressions inside the parentheses.
+
+7
+00:00:33,860 --> 00:00:36,250
+OK, so let's query the table.
+
+8
+00:00:42,640 --> 00:00:46,990
+So I want to call them that does not allow the salary to be higher than three thousand.
+
+9
+00:00:48,420 --> 00:00:54,090
+And if it is, then it cuts it to that value of three thousand so I can select.
+
+10
+00:00:56,350 --> 00:01:04,360
+All the fields from the table, followed by the least function in my list, Putzel and three thousand.
+
+11
+00:01:08,030 --> 00:01:15,410
+And as you can see, the lowest value out of the salary of three thousand has been displayed in each
+
+12
+00:01:15,410 --> 00:01:19,520
+room and in this instance, three thousand is lower than five thousand.
+
+13
+00:01:20,000 --> 00:01:21,080
+So it's been displayed.
+
+14
+00:01:22,390 --> 00:01:29,440
+Now, what if nobody should be paid less than one thousand more than I can change this to the greatest
+
+15
+00:01:31,570 --> 00:01:32,880
+and this to be one thousand?
+
+16
+00:01:33,600 --> 00:01:37,900
+So now the higher of salary or 1000 will be populated.
+
+17
+00:01:40,940 --> 00:01:45,440
+And now Smith has a salary of one thousand rather than eight hundred.

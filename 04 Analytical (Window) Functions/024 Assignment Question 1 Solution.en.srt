@@ -1,0 +1,47 @@
+1
+00:00:02,090 --> 00:00:05,050
+So to do this, we need to select the order idee.
+
+2
+00:00:07,800 --> 00:00:17,460
+The customer ready and we can use the rank function in our analytical function, partitioned by customer
+
+3
+00:00:17,460 --> 00:00:19,710
+ID and order
+
+4
+00:00:23,580 --> 00:00:27,090
+by order, total descending.
+
+5
+00:00:29,320 --> 00:00:33,580
+And the descending is very important because we want to order it from highest to lowest.
+
+6
+00:00:35,700 --> 00:00:42,040
+From our view, the underscore order's inherent.
+
+7
+00:00:43,800 --> 00:00:45,150
+So now we can see.
+
+8
+00:00:47,150 --> 00:00:53,270
+For each customer ID, so for customer ID one, we've got all their distinct orders.
+
+9
+00:00:54,470 --> 00:01:00,980
+And I should actually probably include order total so we can see what the actual order total is.
+
+10
+00:01:02,270 --> 00:01:07,540
+We can see it's a range from highest to lowest and then we start again as we get to the next customer
+
+11
+00:01:07,540 --> 00:01:07,900
+ID.
+
+12
+00:01:09,440 --> 00:01:11,060
+And again, to the next customer, Edy.

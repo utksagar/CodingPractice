@@ -1,0 +1,339 @@
+1
+00:00:02,410 --> 00:00:05,360
+This lecture is critical to mastering analytical functions.
+
+2
+00:00:05,770 --> 00:00:12,070
+So please make sure you follow along after you apply your partitions and order by Krause's, you have
+
+3
+00:00:12,070 --> 00:00:13,420
+to define a window frame.
+
+4
+00:00:15,040 --> 00:00:19,160
+The window frame defines the rows that are used in the analytical function.
+
+5
+00:00:19,630 --> 00:00:25,930
+So if we use to some aggregation, then for each partition of the table, the window frame defines which
+
+6
+00:00:25,930 --> 00:00:32,900
+rose to some, hence the term window frame in a partition as you move down each room.
+
+7
+00:00:32,980 --> 00:00:38,290
+You have the current rows and you have the rows which are preceding the current row, and you also have
+
+8
+00:00:38,290 --> 00:00:40,510
+the rows which are following the current row.
+
+9
+00:00:41,800 --> 00:00:47,680
+Of course, if your current role is at the top or bottom of the partition, then there are no preceding
+
+10
+00:00:47,680 --> 00:00:48,590
+or following roles.
+
+11
+00:00:49,600 --> 00:00:52,780
+So in the illustration, we have a partition from a table.
+
+12
+00:00:53,410 --> 00:00:55,210
+In that partition, we have the current.
+
+13
+00:00:56,610 --> 00:01:00,850
+And then you have another group that is in rose above it in the partition.
+
+14
+00:01:01,560 --> 00:01:03,990
+We turn that as in proceeding.
+
+15
+00:01:04,620 --> 00:01:08,430
+So if it was two rows proceeding, we would say two proceeding.
+
+16
+00:01:09,560 --> 00:01:16,280
+You have another group that comes and goes after and we say and following, if it came three weeks after,
+
+17
+00:01:16,430 --> 00:01:17,750
+we would take three following.
+
+18
+00:01:19,460 --> 00:01:22,220
+The same applies for every single politician.
+
+19
+00:01:24,320 --> 00:01:30,170
+This slide shows the definitions of the different bounds, all definitions include the current.
+
+20
+00:01:31,880 --> 00:01:34,970
+I've attached this slide as a resource to this lecture.
+
+21
+00:01:39,370 --> 00:01:46,690
+So you already know what roads are in a table, a range is a value, and in your window frame you include
+
+22
+00:01:46,690 --> 00:01:50,530
+all roads where the value is within that defined range.
+
+23
+00:01:51,250 --> 00:01:52,960
+I will elaborate on this shortly.
+
+24
+00:01:54,970 --> 00:02:01,000
+When defining just one bound you type rows or range, followed by the bound.
+
+25
+00:02:02,630 --> 00:02:08,210
+For example, Rose, one proceeding or range, one proceeding.
+
+26
+00:02:09,780 --> 00:02:17,340
+When defining lower and upper bounds, you type the rows or range followed by the between Keywood.
+
+27
+00:02:18,510 --> 00:02:20,700
+The lower bound and the upper bound.
+
+28
+00:02:22,310 --> 00:02:25,340
+The lower bound must come before the upper bound.
+
+29
+00:02:28,100 --> 00:02:34,400
+So in the left side, we have an extract of a table partition, this is fake data and has not been extracted
+
+30
+00:02:34,400 --> 00:02:35,420
+from the country's table.
+
+31
+00:02:35,600 --> 00:02:37,430
+It's just, for example, purposes.
+
+32
+00:02:38,180 --> 00:02:45,590
+We've tried to get the some of the population partitioned by region and ordered by subregion ID and
+
+33
+00:02:45,590 --> 00:02:48,800
+defined the window frame as rose unbounded preceding.
+
+34
+00:02:50,010 --> 00:02:57,060
+The table is the partition four way region, it equals 20, so it's looking at the partition where region
+
+35
+00:02:57,060 --> 00:02:57,930
+it is 20.
+
+36
+00:02:59,020 --> 00:03:06,010
+This means that for the some of the population, the window frame is all the rows before the current
+
+37
+00:03:06,010 --> 00:03:08,500
+row and the current row itself.
+
+38
+00:03:10,670 --> 00:03:13,430
+Which you can see highlighted in the green box.
+
+39
+00:03:15,780 --> 00:03:17,160
+And if you take the total.
+
+40
+00:03:18,440 --> 00:03:21,830
+The sum would be fifty eight million, five hundred thousand.
+
+41
+00:03:23,730 --> 00:03:30,510
+On the right table, we have the same formula, except the window frame is now defined between unbounded
+
+42
+00:03:30,510 --> 00:03:33,030
+proceeding and one following.
+
+43
+00:03:33,720 --> 00:03:40,590
+So now we take all those preceding the current row and one row after the current row, which you can
+
+44
+00:03:40,590 --> 00:03:42,330
+see highlighted in green.
+
+45
+00:03:45,060 --> 00:03:51,150
+So the sum of the population is now fifty eight million, five hundred and ten thousand.
+
+46
+00:03:52,190 --> 00:03:58,730
+And remember, both of the tables on the slide are partitions, and for each partition in the context
+
+47
+00:03:58,730 --> 00:04:01,350
+of each row, we are defining a window frame.
+
+48
+00:04:01,970 --> 00:04:06,800
+So as you go down through the window, frame will also move down with that row.
+
+49
+00:04:09,220 --> 00:04:15,100
+Now, instead of roads, we're using range in the window frame, the difference with using range is
+
+50
+00:04:15,100 --> 00:04:21,520
+that it considers a range of numerical values and compares them to the common value for the column that
+
+51
+00:04:21,520 --> 00:04:22,900
+has been used in the order.
+
+52
+00:04:22,900 --> 00:04:30,370
+Because if you do not have anything in your order, because you cannot use range, you must also only
+
+53
+00:04:30,370 --> 00:04:34,420
+have one expression in your order, because when using wrench.
+
+54
+00:04:35,140 --> 00:04:42,370
+So when we're using rows rather than range and we see one proceeding, for example, that means one
+
+55
+00:04:42,370 --> 00:04:42,730
+road.
+
+56
+00:04:44,350 --> 00:04:50,870
+But when we say one preceding Farangis, it means one unit of the value that's being evaluated.
+
+57
+00:04:52,000 --> 00:04:59,320
+So if we have subregions I.D. that is being used in our order because the current row has a subregion
+
+58
+00:04:59,320 --> 00:05:07,530
+idea of 20, then one proceeding would mean subregion idea of 19 as 20, minus one is 19.
+
+59
+00:05:08,410 --> 00:05:10,540
+And that doesn't exist in our table.
+
+60
+00:05:11,850 --> 00:05:21,570
+So in the example on the left, we have our politician the same as before, and our query is ordered
+
+61
+00:05:21,570 --> 00:05:22,730
+by subregion ID.
+
+62
+00:05:23,950 --> 00:05:31,840
+But in the window frame, we say range 10 proceeding because remember, the preceding subregion ID value
+
+63
+00:05:31,990 --> 00:05:39,640
+from our current view is 20, which is 10 lower since we have subregion in the order, because this
+
+64
+00:05:39,640 --> 00:05:40,900
+is what the range considers.
+
+65
+00:05:42,090 --> 00:05:45,150
+So the current route has a subregion of 30.
+
+66
+00:05:46,350 --> 00:05:52,970
+And this is ordered so we can see that 10 proceeding, which is 30, minus 10 equals 20.
+
+67
+00:05:53,430 --> 00:06:01,620
+So that is the range that is used in our window frame for the current row, which is all subregion yds
+
+68
+00:06:01,620 --> 00:06:03,840
+between the range 20 and 30.
+
+69
+00:06:04,980 --> 00:06:06,660
+And that is highlighted in green.
+
+70
+00:06:09,110 --> 00:06:16,610
+So for the current row, the sum of the population would be fifty five million, five hundred thousand.
+
+71
+00:06:18,220 --> 00:06:24,430
+For the right side partition, we use a range between unbounded proceeding and 10 following.
+
+72
+00:06:25,030 --> 00:06:33,040
+So we start right at the top and go ten following the value of the subregion ID in the current row,
+
+73
+00:06:33,880 --> 00:06:37,690
+since the subregion ID in the current row is 30.
+
+74
+00:06:39,160 --> 00:06:47,680
+We do 30 plus 10 equals 40, but as you can see, there are two roles which belong to Country EAF.
+
+75
+00:06:48,660 --> 00:06:53,610
+That are part of subregion 40, so they are both included.
+
+76
+00:06:58,310 --> 00:07:05,600
+It looks for the range of values for subregion ID to select all the rows preceding the current row.
+
+77
+00:07:06,840 --> 00:07:09,420
+Up to subregion 40.
+
+78
+00:07:10,590 --> 00:07:18,930
+And some of the population for the current road would be 78 million, five hundred and ten thousand.
+
+79
+00:07:21,090 --> 00:07:28,470
+If you have nothing specified for the window frame and if the order is specified, then the default
+
+80
+00:07:28,470 --> 00:07:33,560
+window frame is range between inbounded proceeding and current row.
+
+81
+00:07:34,770 --> 00:07:40,100
+The highlighted green shading shows you the window frame for the current road.
+
+82
+00:07:41,620 --> 00:07:49,300
+If you have not specified an order by and have not included a window frame in your overflows, then
+
+83
+00:07:49,300 --> 00:07:56,020
+the default specification is rows between unbounded proceeding and unbounded following.
+
+84
+00:07:57,280 --> 00:08:04,960
+The highlighted green shading is the default window frame for the current work, and that just takes
+
+85
+00:08:05,500 --> 00:08:08,380
+all values in that politician.

@@ -1,0 +1,243 @@
+1
+00:00:02,540 --> 00:00:08,570
+Training enables you to remove leading and trailing characters such as whitespace from character strength.
+
+2
+00:00:10,020 --> 00:00:17,820
+The syntax is to type trem open parentheses, you then have the option to specify leading, which is
+
+3
+00:00:17,820 --> 00:00:24,450
+the start of the string trading, which is the end of the string or both, which is leading and trading.
+
+4
+00:00:24,960 --> 00:00:27,090
+The default is both if left blank.
+
+5
+00:00:27,540 --> 00:00:29,820
+So this is where it searches for your trim source.
+
+6
+00:00:31,020 --> 00:00:36,340
+The trim character is the character or characters to remove from your string.
+
+7
+00:00:37,080 --> 00:00:45,060
+So if you specify leading followed by lowercase s character, it will remove any lowercase S's at the
+
+8
+00:00:45,060 --> 00:00:45,960
+start of your string.
+
+9
+00:00:47,020 --> 00:00:54,580
+You then type from followed by the Transource characters should be enclosed in single quotes and the
+
+10
+00:00:54,580 --> 00:00:56,870
+default trim character is a white space.
+
+11
+00:00:58,150 --> 00:01:03,400
+This function is particularly useful if you want to remove trailing or leading white space.
+
+12
+00:01:05,180 --> 00:01:07,520
+OK, so let's query the table.
+
+13
+00:01:15,090 --> 00:01:21,210
+Let's say I wanted to remove the first letter of each employee that starts with K.
+
+14
+00:01:22,990 --> 00:01:33,880
+I can type select his name just so we can have that there was a reference to the letter K..
+
+15
+00:01:35,790 --> 00:01:37,350
+From his name.
+
+16
+00:01:40,200 --> 00:01:47,450
+So this is the Trem character and this is the dream source I haven't specified, leading or trailing,
+
+17
+00:01:47,460 --> 00:01:48,870
+so by default it's both.
+
+18
+00:01:49,480 --> 00:01:50,400
+And let's hear from.
+
+19
+00:01:52,830 --> 00:01:55,110
+And now King becomes a.
+
+20
+00:01:57,520 --> 00:02:01,050
+So let's use the dual table for some more examples.
+
+21
+00:02:02,310 --> 00:02:08,610
+Let's say I have a string with white space at the start and at the end of it, if I want to remove it,
+
+22
+00:02:08,880 --> 00:02:09,630
+I can type.
+
+23
+00:02:15,650 --> 00:02:21,080
+The white space has the trim character from and this is the actual trim source.
+
+24
+00:02:27,740 --> 00:02:29,630
+And now when I hit run.
+
+25
+00:02:31,890 --> 00:02:37,950
+We return white space with no white space, and I can make this even clearer by checking the length
+
+26
+00:02:37,950 --> 00:02:38,250
+of the.
+
+27
+00:02:47,500 --> 00:02:50,500
+So at prison, the length is ten characters.
+
+28
+00:02:52,680 --> 00:02:58,770
+And that is because he has removed leading and trailing whitespace, if I specify leading.
+
+29
+00:03:01,650 --> 00:03:06,570
+Then the length is 13, that is because it two.
+
+30
+00:03:07,680 --> 00:03:13,020
+Characters at the Star, which are white space, and they get removed, and in the end we have three
+
+31
+00:03:13,020 --> 00:03:18,070
+white space characters, so three plus the 10 four white space equals 13.
+
+32
+00:03:18,990 --> 00:03:20,340
+If I change this to trailing.
+
+33
+00:03:23,110 --> 00:03:26,980
+We get 12 because we remove the three white space characters at the end.
+
+34
+00:03:28,510 --> 00:03:29,890
+But retain the tube at the front.
+
+35
+00:03:32,310 --> 00:03:37,410
+Let's say you wanted to ensure all values in your field were of the same length will, you could put
+
+36
+00:03:37,410 --> 00:03:40,650
+them with characters to ensure that they are of the same length.
+
+37
+00:03:41,010 --> 00:03:47,160
+If the added value is below the required length, it will get padded either on the left or the right
+
+38
+00:03:47,160 --> 00:03:49,350
+side with the character that you specify.
+
+39
+00:03:50,310 --> 00:03:55,110
+If it exceeds the required length, then it gets truncated from either the left or the right side.
+
+40
+00:03:56,080 --> 00:04:01,210
+Both iPad and iPad take three expressions, the field with the values.
+
+41
+00:04:02,170 --> 00:04:06,760
+The length that the value should be after padding and the Pat character.
+
+42
+00:04:09,350 --> 00:04:11,570
+OK, so let's query the table.
+
+43
+00:04:19,920 --> 00:04:26,070
+Let's say I want the emperor to be five characters and it should have leadings, even if the emperor
+
+44
+00:04:26,190 --> 00:04:30,300
+does not have the required length of life I can select.
+
+45
+00:04:33,040 --> 00:04:36,220
+But because I want to pad on the left side.
+
+46
+00:04:38,380 --> 00:04:44,270
+The field, which is the length, which is five and the Pat character, which is over.
+
+47
+00:04:45,460 --> 00:04:46,140
+And he writes.
+
+48
+00:04:48,380 --> 00:04:50,570
+And now the empire is five characters.
+
+49
+00:04:54,920 --> 00:04:56,060
+Now, what if I want?
+
+50
+00:05:05,170 --> 00:05:12,520
+The job field to be a maximum six characters, if it's less than six characters and padded with a capital
+
+51
+00:05:12,520 --> 00:05:13,980
+X on the right side.
+
+52
+00:05:15,720 --> 00:05:22,200
+So what I can do is select Chaubey for comparison and then I go to Arpad.
+
+53
+00:05:24,760 --> 00:05:31,400
+The field, which is the length, which is six and the character X and.
+
+54
+00:05:35,490 --> 00:05:44,580
+So now where the original field exceeds six characters, it gets truncated and where it's below six
+
+55
+00:05:44,580 --> 00:05:48,320
+characters like Clerck, it gets padded with a capital X.
+
+56
+00:05:54,090 --> 00:05:56,190
+Now for the final example.
+
+57
+00:05:57,380 --> 00:06:02,300
+So let's say the salary field is in thousands and I want to add three zeros to the end.
+
+58
+00:06:03,200 --> 00:06:13,010
+I can just type Arpad cell and for the length I can specify the length of the Southy field plus three,
+
+59
+00:06:13,430 --> 00:06:18,800
+because whatever the length is, I want to add three to the end of it, followed by zero.
+
+60
+00:06:22,620 --> 00:06:27,210
+And now we have to value with three zeros added at the end of each of it.
+
+61
+00:06:28,150 --> 00:06:31,270
+OK, so that was showing you how to use trim and pad.

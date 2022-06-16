@@ -1,0 +1,27 @@
+1
+00:00:00,980 --> 00:00:06,350
+We've already been using the some aggregation function in our previous window, close examples, and
+
+2
+00:00:06,350 --> 00:00:08,820
+there are different categories of different window functions.
+
+3
+00:00:09,470 --> 00:00:14,800
+We have aggregate functions such as some average Max Min account.
+
+4
+00:00:15,470 --> 00:00:20,030
+We have ranking functions such as row number, rank and then rank.
+
+5
+00:00:21,600 --> 00:00:29,400
+We also have distribution functions such as percent rank and cumulative distribution, analytical functions
+
+6
+00:00:29,400 --> 00:00:33,600
+include lead, lag, entail and value.
+
+7
+00:00:34,710 --> 00:00:40,020
+In the next four lectures, I will be discussing the four types of window functions in detail.

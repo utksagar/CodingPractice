@@ -1,0 +1,71 @@
+1
+00:00:00,620 --> 00:00:07,940
+For this scenario, let's arrange our countries in order of population from largest, smallest and find
+
+2
+00:00:07,940 --> 00:00:13,460
+the difference between the population of the current country and the one after it.
+
+3
+00:00:14,620 --> 00:00:24,580
+So to do this, we can use the lead function, so let's select the country and the population for that
+
+4
+00:00:24,580 --> 00:00:27,160
+country and our analytical function.
+
+5
+00:00:29,190 --> 00:00:34,290
+So in the parameters, I would like population.
+
+6
+00:00:37,090 --> 00:00:40,540
+Because that is the field that I would like the lead function to pick up.
+
+7
+00:00:42,430 --> 00:00:48,210
+One, because that's the offset I would like one after the current, and that is the value by default.
+
+8
+00:00:48,220 --> 00:00:50,050
+So even if you leave it blank, it will be the same.
+
+9
+00:00:52,640 --> 00:01:03,980
+And individuals, I would just like to order my population sending from EPA and school countries.
+
+10
+00:01:04,130 --> 00:01:08,000
+Now, again, we haven't finished our query, but I just want to see what it looks like.
+
+11
+00:01:12,030 --> 00:01:12,870
+And as you can see.
+
+12
+00:01:14,650 --> 00:01:19,490
+The lead function brings the population of the country below the current rate.
+
+13
+00:01:21,320 --> 00:01:28,010
+And now what we need to do is subtract our analytical function to the population for the current role
+
+14
+00:01:28,250 --> 00:01:36,860
+to determine the variance, so copy into an equal amount to population minus the analytical function,
+
+15
+00:01:37,760 --> 00:01:39,950
+and I'll use that as variant.
+
+16
+00:01:47,440 --> 00:01:53,410
+So now we can see that the population of China is approximately six hundred and seventy million more
+
+17
+00:01:54,160 --> 00:02:00,280
+than the population of India and the population of India is approximately one billion more than the
+
+18
+00:02:00,280 --> 00:02:02,010
+population of the USA.

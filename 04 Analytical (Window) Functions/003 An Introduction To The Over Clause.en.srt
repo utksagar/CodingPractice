@@ -1,0 +1,71 @@
+1
+00:00:01,950 --> 00:00:07,650
+The Overlords is what determines the partitioning and ordering of the Rousset before the window function
+
+2
+00:00:07,650 --> 00:00:08,880
+itself is a polite.
+
+3
+00:00:09,930 --> 00:00:15,390
+As you've seen in this context, within the over clause, you can specify the partition, the ordering
+
+4
+00:00:15,390 --> 00:00:16,770
+and the window frame itself.
+
+5
+00:00:17,670 --> 00:00:22,860
+If you do not specify any partition, then the over clause applies to the entire table.
+
+6
+00:00:23,970 --> 00:00:24,780
+Let me show you.
+
+7
+00:00:27,270 --> 00:00:36,720
+Let's use the over clause with some aggregation on populations in the countries table so we can type
+
+8
+00:00:36,900 --> 00:00:47,940
+select name, comma, some population and then just specify over with no partitioning, ordering or
+
+9
+00:00:47,940 --> 00:00:53,970
+window frames in parentheses and then from every underscore countries.
+
+10
+00:00:59,880 --> 00:01:06,990
+So as you can see, we return seven point seven billion, this is the sum of the population for the
+
+11
+00:01:06,990 --> 00:01:08,070
+entire table.
+
+12
+00:01:09,220 --> 00:01:15,580
+Because we haven't specified any partition or window frame, the function has summed all rose in the
+
+13
+00:01:15,580 --> 00:01:22,060
+table if I just select some population to confirm this.
+
+14
+00:01:24,240 --> 00:01:27,360
+You can see that the some of the population is the same.
+
+15
+00:01:29,640 --> 00:01:34,920
+I will cover the partition by close order, by close and window frames in the next lecture's.
+
+16
+00:01:35,400 --> 00:01:41,280
+But as you've seen, if you just use the overgrowth on its own, it applies the window function to every
+
+17
+00:01:41,280 --> 00:01:42,660
+row in the query table.
+
+18
+00:01:43,710 --> 00:01:49,170
+This is also an alternative to applying an aggregation without using the group because.

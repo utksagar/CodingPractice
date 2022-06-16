@@ -1,0 +1,195 @@
+1
+00:00:00,650 --> 00:00:06,200
+So I appreciate that might be a lot to take in, but let's run through some examples using our country's
+
+2
+00:00:06,200 --> 00:00:06,600
+table.
+
+3
+00:00:08,190 --> 00:00:14,120
+Let's first look at how the default window frame works when we don't specify anything for the window
+
+4
+00:00:14,120 --> 00:00:14,420
+frame.
+
+5
+00:00:15,800 --> 00:00:22,520
+So let's type select name, which is the country name region.
+
+6
+00:00:22,550 --> 00:00:28,560
+Underscore it because that's what we're going to partition by subregion underscore.
+
+7
+00:00:28,560 --> 00:00:29,000
+Right.
+
+8
+00:00:29,630 --> 00:00:36,890
+Because that's what we can order by the population, because that's what we're going to do our analytical
+
+9
+00:00:36,890 --> 00:00:37,550
+function on.
+
+10
+00:00:38,450 --> 00:00:45,920
+And then the first analytical function, which will be some of population
+
+11
+00:00:48,350 --> 00:00:48,950
+over.
+
+12
+00:00:51,730 --> 00:01:02,440
+Partition by region underscore it, and I'll include an order by clause, sub, underscore region,
+
+13
+00:01:02,470 --> 00:01:05,920
+underscore it, but I won't specify a window frame.
+
+14
+00:01:06,400 --> 00:01:07,080
+All alias.
+
+15
+00:01:07,100 --> 00:01:07,930
+This is a.
+
+16
+00:01:11,900 --> 00:01:20,840
+I'll do another analytical function where I'll do some of population over partition by region, underscore
+
+17
+00:01:20,850 --> 00:01:31,310
+it, and this time I won't specify an order by or the window frame and I'll add that as be and will
+
+18
+00:01:31,310 --> 00:01:35,090
+type from every underscore countries.
+
+19
+00:01:37,070 --> 00:01:40,520
+And let me just select 500000.
+
+20
+00:01:41,060 --> 00:01:45,760
+And here right now, let's evaluate our results.
+
+21
+00:01:48,310 --> 00:01:52,900
+So I want you to understand the difference between the columns A and B.
+
+22
+00:01:54,040 --> 00:02:03,360
+For both, we have not specified the actual window frame for column A. We have partition by region and
+
+23
+00:02:03,460 --> 00:02:04,960
+order by subregion subregions.
+
+24
+00:02:07,460 --> 00:02:10,250
+Since we've specified the order by.
+
+25
+00:02:11,610 --> 00:02:18,450
+But not defying the window frame, the range is between unbounded preceding and current.
+
+26
+00:02:31,480 --> 00:02:41,170
+Whereas for Colombe, we specified the partition by, but we've not specified the order by or the window
+
+27
+00:02:41,170 --> 00:02:41,500
+frame.
+
+28
+00:02:43,270 --> 00:02:53,650
+So the default for that would be rose, unbounded proceeding and inbounded following, so Colombe continues
+
+29
+00:02:53,650 --> 00:02:57,330
+the summation for the entire partition.
+
+30
+00:02:58,000 --> 00:03:06,340
+So this value, which is just over one billion, is the sum of the population for region ICD 10.
+
+31
+00:03:07,450 --> 00:03:18,250
+And as we get to a new region, it it then takes the sum of region into 20, whereas for column A,
+
+32
+00:03:18,700 --> 00:03:20,410
+we continue the partition.
+
+33
+00:03:22,030 --> 00:03:26,680
+Until we get to a new subregion, I'd say this some.
+
+34
+00:03:29,160 --> 00:03:36,240
+Would be for regionality 10 and subregion ID 10.
+
+35
+00:03:38,010 --> 00:03:41,460
+So then it's currently six hundred and forty million.
+
+36
+00:03:43,770 --> 00:03:48,900
+And as we get to subregion, I'd 80, the value goes up.
+
+37
+00:03:49,940 --> 00:03:59,210
+To one million, to over one billion, so it takes the value for subregion ID 10.
+
+38
+00:04:00,060 --> 00:04:02,700
+And it adds it to the value for some reason.
+
+39
+00:04:04,290 --> 00:04:12,900
+So it continues something on because remember, it's doing range inbounded proceeding and current road.
+
+40
+00:04:13,350 --> 00:04:22,200
+So when you're at Canada, which is regionality 10 and subregion 80, inbounded proceeding would also
+
+41
+00:04:22,200 --> 00:04:24,750
+include subregion 10.
+
+42
+00:04:28,030 --> 00:04:31,720
+And as we get to a new partition, we start again.
+
+43
+00:04:32,140 --> 00:04:38,560
+So this Time column, again, is lower than Colombia because Colombia has calculated the population
+
+44
+00:04:38,560 --> 00:04:46,900
+for the entire partition of Region 20, whereas so far Column A. has only calculated the sum of population
+
+45
+00:04:46,900 --> 00:04:50,820
+for region in the 20 and subregion 70.
+
+46
+00:04:51,520 --> 00:05:00,430
+So as we go down to the next subregion and we're still in partition for region 80-20, we continue to
+
+47
+00:05:00,430 --> 00:05:03,880
+add on and it slowly will accumulate.
+
+48
+00:05:06,980 --> 00:05:10,370
+Until we get the same value in both columns.
+
+49
+00:05:11,460 --> 00:05:15,840
+So I hope you understand what's going on with Columns A and B.

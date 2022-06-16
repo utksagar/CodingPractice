@@ -1,0 +1,275 @@
+1
+00:00:01,760 --> 00:00:07,100
+Now, let's start with some examples by defining which rose to use in window frame.
+
+2
+00:00:08,760 --> 00:00:16,290
+I'm using the country's tables, too, and I want to partition by regionality and subregion it and also
+
+3
+00:00:16,290 --> 00:00:18,070
+order it by subregions it.
+
+4
+00:00:18,930 --> 00:00:24,280
+So let's start by using Rose unbounded proceeding and unbounded following.
+
+5
+00:00:25,440 --> 00:00:37,770
+So I'll select a name which is a country name, regionality sub region IT population.
+
+6
+00:00:41,800 --> 00:00:51,610
+And now I would define my analytical function, which I will be the sum of the population over partition
+
+7
+00:00:52,300 --> 00:01:05,530
+by region and the security and sub region and the security, I also order the partition by sub region
+
+8
+00:01:05,540 --> 00:01:06,010
+it.
+
+9
+00:01:07,500 --> 00:01:13,020
+And now to define my window frame, I'll type Rose Inbounded.
+
+10
+00:01:15,180 --> 00:01:30,170
+Proceeding and inbounded following, and I'll name that as a from EPA undisclosed countries.
+
+11
+00:01:31,160 --> 00:01:32,150
+Now let's hear from.
+
+12
+00:01:38,090 --> 00:01:39,310
+Got the between keyword.
+
+13
+00:01:48,680 --> 00:01:55,970
+So if we look at problem A, we can see that we've defined each partition as a combination of the region
+
+14
+00:01:56,360 --> 00:01:57,550
+and the sub region, it.
+
+15
+00:01:58,560 --> 00:02:02,670
+So for some reason, it 10 and regionality 10.
+
+16
+00:02:03,890 --> 00:02:09,650
+We have the total population, which I think is six hundred and forty eight million.
+
+17
+00:02:11,150 --> 00:02:12,200
+When we scroll down.
+
+18
+00:02:13,760 --> 00:02:15,560
+And we get to subregion it.
+
+19
+00:02:17,940 --> 00:02:18,750
+Of 80.
+
+20
+00:02:20,170 --> 00:02:27,850
+We recalculate the total population for region wide 10 and sub region 80, which is three hundred and
+
+21
+00:02:27,850 --> 00:02:30,250
+sixty seven million approximately.
+
+22
+00:02:34,010 --> 00:02:39,550
+And this is because we've defined unbounded proceeding and unbounded following as the window frame.
+
+23
+00:02:40,730 --> 00:02:41,810
+So for each row.
+
+24
+00:02:42,940 --> 00:02:48,650
+For that specific politician, which in our case, the politician is defined by each distinct regional
+
+25
+00:02:48,920 --> 00:02:55,780
+and subregional combination, the some formula will take all roles for each politician.
+
+26
+00:02:57,370 --> 00:02:59,830
+Now, let's do another analytical function.
+
+27
+00:03:08,770 --> 00:03:09,700
+Using the same.
+
+28
+00:03:12,440 --> 00:03:15,740
+Partitioned by an order by criteria.
+
+29
+00:03:17,550 --> 00:03:24,660
+So I'll just copy and paste it, and this time I'll define the partition as one proceeding and one follow
+
+30
+00:03:24,660 --> 00:03:35,070
+me, so I'll type rose, one rose between the other, between Keywood, one proceeding and one following,
+
+31
+00:03:36,510 --> 00:03:40,200
+and I'll call that as B I let it run.
+
+32
+00:03:43,950 --> 00:03:45,710
+Now, let's see what's happening here.
+
+33
+00:03:47,750 --> 00:03:51,230
+So for Colombe, each window frame again.
+
+34
+00:03:52,660 --> 00:03:56,330
+Is defined within the partition of region wide and subregion.
+
+35
+00:03:56,430 --> 00:04:03,100
+I did so for column B again, we're using the partition of regionality and subregion.
+
+36
+00:04:04,030 --> 00:04:09,490
+But for the window frame, we're defining one proceeding and one following in the context of the current
+
+37
+00:04:09,490 --> 00:04:09,760
+row.
+
+38
+00:04:11,590 --> 00:04:13,630
+So for Jamaica.
+
+39
+00:04:17,250 --> 00:04:18,660
+Nothing is proceeding in.
+
+40
+00:04:19,700 --> 00:04:23,750
+But we have the population of Honduras following it.
+
+41
+00:04:24,870 --> 00:04:25,650
+So we take.
+
+42
+00:04:27,320 --> 00:04:34,550
+Two million, nine hundred and forty thousand and add that to the population of Honduras, which is
+
+43
+00:04:34,550 --> 00:04:40,790
+approximately nine point seven million, and we get our result here, which is the sum of these two
+
+44
+00:04:40,790 --> 00:04:41,630
+populations.
+
+45
+00:04:43,680 --> 00:04:50,970
+And then when we get to our next route, which is Honduras, this time for the window frame, we have
+
+46
+00:04:50,970 --> 00:04:56,310
+one proceeding, we have the current route and we have one following.
+
+47
+00:04:58,110 --> 00:04:58,920
+So this value.
+
+48
+00:05:00,800 --> 00:05:08,330
+Of one hundred and forty million is the sum of the population of Mexico, Honduras and Jamaica, and
+
+49
+00:05:08,330 --> 00:05:12,230
+we continue doing that until we get to the end of the partition.
+
+50
+00:05:15,970 --> 00:05:17,890
+Which is Grenada.
+
+51
+00:05:20,080 --> 00:05:27,010
+And this value of four hundred and two thousand eight hundred and thirty five would be the sum of French
+
+52
+00:05:27,010 --> 00:05:32,620
+Guiana plus Granada, because remember we're at the end of the partition.
+
+53
+00:05:33,310 --> 00:05:38,680
+So the following value of Canada is actually part of a different partition because the subregion, it
+
+54
+00:05:38,710 --> 00:05:39,330
+is 80.
+
+55
+00:05:39,610 --> 00:05:42,250
+So we just take the sum of this valley and this value.
+
+56
+00:05:44,770 --> 00:05:51,310
+And again, when we start with Canada, which is at the new partition, this valley would be the sum
+
+57
+00:05:51,310 --> 00:05:56,280
+of the current group and one following because remember, there is nothing preceding this partition.
+
+58
+00:05:57,490 --> 00:06:05,620
+So let's do one more example just to cement our understanding and this time all the current road and
+
+59
+00:06:05,620 --> 00:06:06,490
+to follow.
+
+60
+00:06:07,990 --> 00:06:08,710
+So I'll just.
+
+61
+00:06:09,850 --> 00:06:14,680
+Copy this and modify it, palitha ac.
+
+62
+00:06:16,250 --> 00:06:23,180
+Rows between current row and two following.
+
+63
+00:06:24,830 --> 00:06:25,450
+And here, Ron.
+
+64
+00:06:28,730 --> 00:06:36,770
+So now for each politician, we take the value of the current population, which will be Tumaco in this
+
+65
+00:06:36,770 --> 00:06:42,290
+current group, which would be the top rate, and then at the population of Honduras and Mexico to get
+
+66
+00:06:42,290 --> 00:06:44,120
+the value of one hundred and forty million.
+
+67
+00:06:45,200 --> 00:06:53,510
+So it's essentially just an offset of B by one word, and remember, just as with Colombe, each politician
+
+68
+00:06:53,510 --> 00:06:54,050
+changes.
+
+69
+00:06:56,900 --> 00:06:58,160
+With the next subregion, it.
