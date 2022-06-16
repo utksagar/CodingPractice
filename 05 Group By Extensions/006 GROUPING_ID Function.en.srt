@@ -1,0 +1,211 @@
+1
+00:00:01,470 --> 00:00:07,950
+The grouping ID function provides a flag for the specific subtotal or grand total that has been shown
+
+2
+00:00:07,950 --> 00:00:10,890
+at the root level based on your group by extension.
+
+3
+00:00:12,210 --> 00:00:18,000
+It can be used in the select statement only when a group, by extension has been used, the same columns
+
+4
+00:00:18,000 --> 00:00:24,600
+that are included in your group, by extension, should be enclosed in the grouping ID functions parentheses
+
+5
+00:00:24,600 --> 00:00:29,180
+to an example of the syntax is shown on the screen.
+
+6
+00:00:32,590 --> 00:00:38,620
+And as you can see, we've applied a roll up on column one and column two and the grouping, it also
+
+7
+00:00:38,620 --> 00:00:41,620
+contains column one and column two in its parentheses.
+
+8
+00:00:43,340 --> 00:00:48,890
+OK, so let's say we have two columns as per the previous Syntex show.
+
+9
+00:00:49,340 --> 00:00:51,650
+Well, how would the grouping flag these?
+
+10
+00:00:52,280 --> 00:00:54,060
+Well, it would do it for every combination.
+
+11
+00:00:54,740 --> 00:00:59,960
+So if the group ID field return zero, then all provided columns have been grouped.
+
+12
+00:01:01,700 --> 00:01:09,050
+If it returns, one in the first column has been subtitled, if it returns to and the second column
+
+13
+00:01:09,050 --> 00:01:10,130
+has been subtitled.
+
+14
+00:01:11,040 --> 00:01:14,370
+If it returns three, then this is the grand total.
+
+15
+00:01:15,790 --> 00:01:22,540
+Note that if we have three columns, we would have eight combinations, and so the group would go up
+
+16
+00:01:22,540 --> 00:01:29,290
+to seven for the grand total as it starts with zero and the grand total will always get the highest
+
+17
+00:01:29,290 --> 00:01:29,680
+number.
+
+18
+00:01:32,700 --> 00:01:39,420
+OK, so let's run our query again, where we roll up by region and subregion it and this time had the
+
+19
+00:01:39,420 --> 00:01:40,650
+group in it too.
+
+20
+00:01:41,820 --> 00:01:57,000
+So I will select and Vale region, Heidi, and the southern region, Heidi, and then I will add the
+
+21
+00:01:57,000 --> 00:02:00,390
+grouping ID with both of these columns inside of it.
+
+22
+00:02:10,810 --> 00:02:20,920
+Close parentheses and then get the some of the population from Libya and Isco countries and group by
+
+23
+00:02:21,100 --> 00:02:21,790
+Roll-Up.
+
+24
+00:02:28,300 --> 00:02:29,080
+And at.
+
+25
+00:02:33,150 --> 00:02:38,940
+They say as well, terminate with a semi-trailer until around.
+
+26
+00:02:45,510 --> 00:02:51,930
+So before I evaluate this fully, because we're doing a roll up, as I mentioned previously, I expect
+
+27
+00:02:51,930 --> 00:02:57,360
+to see the flags at zero one and three because we would not have subregion.
+
+28
+00:02:57,360 --> 00:02:59,490
+I'd subtotal on it, so.
+
+29
+00:03:03,350 --> 00:03:04,280
+And as you can see.
+
+30
+00:03:05,330 --> 00:03:11,690
+That is the case, we only see zero one and three one is where we got the region it total and three
+
+31
+00:03:11,690 --> 00:03:12,550
+is the grand total.
+
+32
+00:03:13,570 --> 00:03:16,350
+OK, so let's change this to Cube now.
+
+33
+00:03:19,630 --> 00:03:30,160
+And this time, I would expect to see zero one, two and three as the group it likes and that is the
+
+34
+00:03:30,160 --> 00:03:30,590
+case.
+
+35
+00:03:30,970 --> 00:03:38,230
+Three is the grand total, two is the subregion total one, as we've seen previously in the region,
+
+36
+00:03:38,230 --> 00:03:39,700
+it total rose.
+
+37
+00:03:41,730 --> 00:03:43,350
+And zero would just be.
+
+38
+00:03:44,600 --> 00:03:47,720
+The region and subregion, it combination's.
+
+39
+00:03:52,460 --> 00:04:00,860
+Now, if I had a third column that's non-segregated, such as organization regionality, and then add
+
+40
+00:04:00,860 --> 00:04:09,530
+that to the grouping it and the cube extension, then I expect my grouping ID to go all the way up to
+
+41
+00:04:09,530 --> 00:04:13,820
+seven because with three columns there are eight possible combinations.
+
+42
+00:04:14,120 --> 00:04:19,420
+And since the group it starts with zero, I'd expect the grand total to be flagged as number seven.
+
+43
+00:04:19,730 --> 00:04:20,840
+So let's test that.
+
+44
+00:04:30,180 --> 00:04:35,070
+Had to cut my hair and then at that.
+
+45
+00:04:41,300 --> 00:04:43,820
+Antipas grouping idee.
+
+46
+00:04:46,530 --> 00:04:50,470
+As well as the cube function.
+
+47
+00:04:51,390 --> 00:04:52,590
+So now when I hit run.
+
+48
+00:04:55,210 --> 00:04:58,810
+We can see that the grouping is for the grand total is seven.
+
+49
+00:05:00,610 --> 00:05:09,100
+And if I change this to roll up, I would expect to see a lot of blank numbers, but I would still expect.
+
+50
+00:05:11,340 --> 00:05:17,460
+The grand total to be up to seven, because the grouping, it will always number everything based on
+
+51
+00:05:17,460 --> 00:05:23,850
+every possible combination, even though the Roll-Up evaluates the subtitles based on the hierarchy.
+
+52
+00:05:25,310 --> 00:05:26,240
+And as you can see.
+
+53
+00:05:28,740 --> 00:05:34,260
+We have a lot of gaps in our numbering, but when we get down to the grand total, it's still seven.

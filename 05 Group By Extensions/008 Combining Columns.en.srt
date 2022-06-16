@@ -1,0 +1,55 @@
+1
+00:00:01,350 --> 00:00:07,050
+You can put multiple columns in parenthesis in your cube and roll up extensions, and they will be treated
+
+2
+00:00:07,050 --> 00:00:12,330
+as composite columns, meaning they will be evaluated like the single columns.
+
+3
+00:00:13,280 --> 00:00:18,890
+So in the syntax on the left, we have three columns individually specified in the roll up extension.
+
+4
+00:00:20,800 --> 00:00:24,580
+They get evaluated in hierarchy order as per normal.
+
+5
+00:00:25,720 --> 00:00:32,170
+But in the syntax on the right, we have column one and column two in parentheses, so they both treated
+
+6
+00:00:32,170 --> 00:00:33,280
+as a single column.
+
+7
+00:00:34,410 --> 00:00:42,180
+Column one and column two are evaluated along with column three as per before, but in the next level,
+
+8
+00:00:42,570 --> 00:00:45,170
+column one and column two are evaluated.
+
+9
+00:00:45,690 --> 00:00:53,550
+But after that, rather than having column to drop off, we lose both column one and column two and
+
+10
+00:00:53,550 --> 00:00:54,630
+get to the grand total.
+
+11
+00:00:55,470 --> 00:00:59,520
+This is an example of composite columns in your roll up and cube extensions.
+
+12
+00:01:00,000 --> 00:01:06,650
+If you provide multiple columns in parentheses, they will get treated like they are single columns.
+
+13
+00:01:07,200 --> 00:01:13,170
+So in this instance, column one and column two are being treated as a single column and they will not
+
+14
+00:01:13,170 --> 00:01:15,030
+be evaluated individually.

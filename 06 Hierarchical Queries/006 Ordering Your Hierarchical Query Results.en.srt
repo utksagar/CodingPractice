@@ -1,0 +1,59 @@
+1
+00:00:01,900 --> 00:00:09,580
+If we use the order by close, then we break the hierarchical ordering of the data using order by siblings
+
+2
+00:00:09,850 --> 00:00:15,850
+preserves the hierarchy primarily and then orders the results by the specified columns.
+
+3
+00:00:17,380 --> 00:00:25,180
+The order by siblings clause can only be used in hierarchical queries, so if I query the table with
+
+4
+00:00:25,180 --> 00:00:28,990
+Blake as the root and using the connect by clause as follows.
+
+5
+00:00:35,180 --> 00:00:41,990
+Start with M equals seven.
+
+6
+00:00:43,260 --> 00:00:54,720
+Six, nine, eight, four black connect by prior and equals manager and her.
+
+7
+00:00:58,640 --> 00:01:01,400
+So here we have Blakers, our route.
+
+8
+00:01:03,240 --> 00:01:04,380
+And all of his reports.
+
+9
+00:01:05,670 --> 00:01:07,710
+So now let's use the order by close.
+
+10
+00:01:10,350 --> 00:01:16,250
+An order based on your name ascending and its default by ascending to I don't need to write it.
+
+11
+00:01:18,380 --> 00:01:22,970
+Now, as you can see, we've actually broken the hierarchy, Blake is no longer at the top.
+
+12
+00:01:24,270 --> 00:01:27,210
+So let's use order siblings by instead.
+
+13
+00:01:32,900 --> 00:01:37,400
+Now, as you can see, we retain the hierarchy, but now the siblings.
+
+14
+00:01:38,630 --> 00:01:43,570
+In level two are arranged in alphabetical order, AJ MTW.
+
+15
+00:01:45,470 --> 00:01:52,010
+So that's just a short lecture showing you how to order your results, but retain the hierarchy primarily.

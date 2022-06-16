@@ -1,0 +1,187 @@
+1
+00:00:02,060 --> 00:00:07,980
+Cube is an extension to the group by clause that allows you to generate subtitles as well as granting
+
+2
+00:00:08,000 --> 00:00:10,250
+tools just like Roll-Up.
+
+3
+00:00:11,370 --> 00:00:17,490
+However, the subtitles are generated based on all combinations of the provided columns in the Cube
+
+4
+00:00:17,490 --> 00:00:23,370
+extension parenthesis, there is no hierarchy unlike the Roll-Up extension.
+
+5
+00:00:25,340 --> 00:00:31,220
+So in the Syntex on the screen, we again have to non-segregated columns in our select statement, column
+
+6
+00:00:31,220 --> 00:00:37,700
+one and column two in our group because we have the cube extension with column one and column two in
+
+7
+00:00:37,700 --> 00:00:38,450
+parenthesis.
+
+8
+00:00:39,980 --> 00:00:48,020
+The subtitles will happen for column one and column two as a combination column one on its own.
+
+9
+00:00:49,040 --> 00:00:56,420
+Column two on its own and in the grand total, to win the column one or column two, limiting the total
+
+10
+00:00:56,420 --> 00:00:57,140
+calculation.
+
+11
+00:00:58,560 --> 00:01:07,470
+In the next example, we have three columns in the Cube extension, so now we have eight possible combinations.
+
+12
+00:01:08,220 --> 00:01:15,400
+So unlike the Roll-Up, where it's done based on a hierarchy, the cube extension will generate subtitles
+
+13
+00:01:15,540 --> 00:01:18,450
+for all possible combinations.
+
+14
+00:01:21,170 --> 00:01:25,580
+OK, so let's do an example using our eBay underscore pantry's table again.
+
+15
+00:01:26,240 --> 00:01:31,930
+Let's do the same previs example we did with Roll-Up where we used regionality and subregion EITE.
+
+16
+00:01:32,360 --> 00:01:36,370
+But this time we'll use the cube extension rather than the rolled up extension.
+
+17
+00:01:36,980 --> 00:01:54,800
+So I'm going to select and we'll regionality zero and we'll sub region wide zero sum of the population
+
+18
+00:01:54,800 --> 00:02:01,040
+as the aggregation from eBay and school countries.
+
+19
+00:02:02,790 --> 00:02:04,910
+By this time I'll type KUB.
+
+20
+00:02:05,860 --> 00:02:07,000
+And I will copy this.
+
+21
+00:02:09,680 --> 00:02:14,630
+Into the parenthesis for Cube, put into a single line for readability.
+
+22
+00:02:16,500 --> 00:02:17,970
+Terminating the semicolon.
+
+23
+00:02:19,790 --> 00:02:20,570
+InterOil.
+
+24
+00:02:25,720 --> 00:02:33,220
+So before I review this, what I expect to see would be the subtitles for the region, Idy and the subregion
+
+25
+00:02:33,220 --> 00:02:39,310
+I'd combination, and then for region regionality on its own and then for subregion, it is on its own
+
+26
+00:02:39,760 --> 00:02:41,020
+and in the Grand Hotel.
+
+27
+00:02:42,820 --> 00:02:48,520
+So as you can see, we first have the Grand Hotel where we've got nulls for the region and the subregion,
+
+28
+00:02:48,590 --> 00:02:55,570
+and we then have the totals for the subregion as they were nulls in the region ID field.
+
+29
+00:02:57,570 --> 00:03:00,540
+So this is the subtotal for subregion ID 10.
+
+30
+00:03:01,070 --> 00:03:04,470
+This is the subtotal for some reason, ID 20 and so on.
+
+31
+00:03:08,560 --> 00:03:14,440
+And then as I scroll down where we have Noles in the subregion, I'd feel it would be the total for
+
+32
+00:03:14,440 --> 00:03:15,400
+the region it.
+
+33
+00:03:15,760 --> 00:03:20,610
+So this is the total for region, I'd tell, which is, again, just over just over a billion.
+
+34
+00:03:21,490 --> 00:03:24,400
+And then this would be the total for region wide 20.
+
+35
+00:03:25,920 --> 00:03:32,130
+And where we have a region under subregion it populated, that will be the combination of region and
+
+36
+00:03:32,130 --> 00:03:36,540
+subregion it which would have occurred in a normal group by statement anyway.
+
+37
+00:03:39,660 --> 00:03:46,850
+So as you can see, unlike roller cube evaluates all combinations, if I was to change this to a up
+
+38
+00:03:46,860 --> 00:03:51,570
+right now, we would no longer be able to see the total for subregion.
+
+39
+00:03:51,570 --> 00:03:53,820
+It, as I'm about to show you.
+
+40
+00:04:00,910 --> 00:04:06,070
+As you can see, we no longer have the total just for the subregion it.
+
+41
+00:04:09,440 --> 00:04:16,640
+And that is because that gets dropped off as it's lower in the hierarchy, whereas with Cuba, all of
+
+42
+00:04:16,640 --> 00:04:18,560
+the combinations are evaluated.
+
+43
+00:04:20,390 --> 00:04:24,020
+As you can see, we now have subregion in total again.
+
+44
+00:04:27,070 --> 00:04:33,730
+Now, as with the roll up extension, you can also do a partial cube where you have some non-segregated
+
+45
+00:04:33,730 --> 00:04:37,250
+columns in the group by close but not in the cube extension.
+
+46
+00:04:37,810 --> 00:04:41,830
+It works pretty much as you'd expect after seeing the example on the role of lecture.
+
+47
+00:04:42,010 --> 00:04:46,630
+So I won't go over that again, but I'll leave you to investigate that in your own time.

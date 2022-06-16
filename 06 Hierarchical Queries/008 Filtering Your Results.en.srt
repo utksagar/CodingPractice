@@ -1,0 +1,59 @@
+1
+00:00:01,180 --> 00:00:07,750
+You can filter your records using the workload's, so let us query the table with King as the root
+
+2
+00:00:11,590 --> 00:00:16,780
+and I'll actually address this at that level.
+
+3
+00:00:28,160 --> 00:00:30,080
+And that is King's employee ID.
+
+4
+00:00:43,270 --> 00:00:47,920
+OK, so let's say I do not want to return Blake.
+
+5
+00:00:49,270 --> 00:00:55,660
+I can just use a workload's before they start with claws and type with Infinera does not equal.
+
+6
+00:00:57,290 --> 00:01:01,160
+Seven, six, nine, eight, which is Blake's employee number.
+
+7
+00:01:04,300 --> 00:01:10,930
+And as you can see, Blake is no longer returned, but we do have Blake's direct reports.
+
+8
+00:01:11,560 --> 00:01:18,400
+If we want to exclude Blake's direct and indirect reports to, then instead of using the word close,
+
+9
+00:01:20,050 --> 00:01:27,130
+we can just add the clause to the connect by clause and type where and no does not equal.
+
+10
+00:01:28,350 --> 00:01:29,340
+Seven, six, nine, eight.
+
+11
+00:01:30,420 --> 00:01:31,620
+And now when I hit run.
+
+12
+00:01:33,890 --> 00:01:40,350
+Not only do we not return blank, but we also do not return his direct or indirect reports.
+
+13
+00:01:41,180 --> 00:01:46,910
+So that would also be the people who report into the people that report into black.
+
+14
+00:01:48,170 --> 00:01:54,320
+So, as you can see, specifying your condition in the connect by clause will mean that the exclusion
+
+15
+00:01:54,680 --> 00:01:57,890
+or the condition applies to the children to.

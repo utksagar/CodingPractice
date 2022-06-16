@@ -1,0 +1,95 @@
+1
+00:00:01,240 --> 00:00:08,260
+You can format your results so that they're more readable using the L pad function, the Árpád function
+
+2
+00:00:08,350 --> 00:00:12,010
+pad the string with another string up to a certain length.
+
+3
+00:00:12,930 --> 00:00:17,440
+It takes three parameters, the so string, which should be a column.
+
+4
+00:00:18,460 --> 00:00:22,340
+The total length of the string should be and the padding character.
+
+5
+00:00:23,470 --> 00:00:29,650
+So if your string has a length of five but only four characters, then the remaining character will
+
+6
+00:00:29,650 --> 00:00:33,580
+be padded by one additional part character on the left side.
+
+7
+00:00:36,420 --> 00:00:47,130
+So let's first query your results with King as the root, so I'll select NPR top staff level from AMP.
+
+8
+00:00:48,630 --> 00:00:53,610
+Start with AMP no equals.
+
+9
+00:00:54,880 --> 00:00:56,410
+Seven, eight, three, nine.
+
+10
+00:00:58,980 --> 00:01:06,810
+Connected by prior employer, he was manager and run.
+
+11
+00:01:10,890 --> 00:01:17,330
+OK, so it's hard to tell here where each parent is looking.
+
+12
+00:01:22,860 --> 00:01:29,630
+Now, if I use L pad, L pad and I will specified in.
+
+13
+00:01:30,870 --> 00:01:32,490
+Has the string.
+
+14
+00:01:34,660 --> 00:01:42,640
+Followed by the length, which will be the length function to the evening, plus the additional padding
+
+15
+00:01:42,640 --> 00:01:49,210
+character, which I'll just have as level, so it will be padded by one additional character if the
+
+16
+00:01:49,210 --> 00:01:57,190
+level is one two, if the level is two and so on, and the padding character will be the greatest and
+
+17
+00:01:57,190 --> 00:01:57,640
+simple.
+
+18
+00:01:59,320 --> 00:02:06,850
+And I'll use this as your name again, your name on the school had.
+
+19
+00:02:09,330 --> 00:02:10,140
+And hit, run.
+
+20
+00:02:12,630 --> 00:02:14,130
+Now we can see.
+
+21
+00:02:15,310 --> 00:02:22,810
+King is the top, and he has one character below him, we have Jones and then Jones, whose quotes got
+
+22
+00:02:23,560 --> 00:02:26,810
+reporting into him, and then Scott has Adams reporting into him.
+
+23
+00:02:27,610 --> 00:02:30,070
+So it's clear to see now the structure.
+
+24
+00:02:30,940 --> 00:02:37,270
+So that's just a quick tip on formatting your results to make your hierarchy a little bit more readable.

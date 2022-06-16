@@ -1,0 +1,39 @@
+1
+00:00:01,480 --> 00:00:07,690
+When performing a normal group, you return the summary rose based on the group columns, but you do
+
+2
+00:00:07,690 --> 00:00:13,780
+not return any subtotal or grand totals, as you can see on the example table, on the slide.
+
+3
+00:00:16,260 --> 00:00:23,790
+Using Tube Roll-Up and grouping sets, which are known as extensions to the group by Bangalore's, can
+
+4
+00:00:23,790 --> 00:00:28,230
+allow you to obtain subtitles and grand totals in your group by results.
+
+5
+00:00:29,160 --> 00:00:31,570
+And you can see this on the right side table.
+
+6
+00:00:32,400 --> 00:00:37,820
+We now have two rows which contain the subtitles based on the location it.
+
+7
+00:00:39,790 --> 00:00:46,120
+So the total for location one is two hundred thousand and location two is one hundred thousand.
+
+8
+00:00:46,990 --> 00:00:50,640
+We also return a grand total, which is three hundred thousand.
+
+9
+00:00:51,880 --> 00:00:57,040
+So in the course of the next few lectures, I will talk about the various extensions to the group by
+
+10
+00:00:57,040 --> 00:01:02,410
+clause so that you can return subtitles and grandnephew tools in your group by queries.

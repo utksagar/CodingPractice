@@ -1,0 +1,203 @@
+1
+00:00:01,060 --> 00:00:07,780
+The connect by prior clause defines the parent and child columns in your table, the column immediately
+
+2
+00:00:07,780 --> 00:00:10,560
+following the prior keyword is the child column.
+
+3
+00:00:12,890 --> 00:00:15,480
+OK, so let's see some examples of this.
+
+4
+00:00:16,430 --> 00:00:19,940
+I'm going to select all columns from the table.
+
+5
+00:00:24,890 --> 00:00:27,770
+Now, I want to use the Kinect because.
+
+6
+00:00:29,150 --> 00:00:36,530
+And have no problem as the child him and the manager column has the parent column to do that.
+
+7
+00:00:36,830 --> 00:00:47,180
+I totally connect by prior and immediately following the prior Keywood I typed in because that's the
+
+8
+00:00:47,180 --> 00:00:49,610
+child column equals manager.
+
+9
+00:00:50,630 --> 00:00:57,500
+So here is where we are defining our parent child relationship with the child and manager as the parent.
+
+10
+00:00:58,570 --> 00:00:59,050
+And yet.
+
+11
+00:01:00,520 --> 00:01:03,760
+Before I do, I'm going to increase the limit.
+
+12
+00:01:10,010 --> 00:01:12,020
+OK, so from our results.
+
+13
+00:01:15,060 --> 00:01:21,810
+We could see that we've returned thirty nine rows, our dataset only has 14.
+
+14
+00:01:23,100 --> 00:01:29,490
+So the reason for this is because if we do not specify the start with close and I will explain the start
+
+15
+00:01:29,490 --> 00:01:35,790
+with close, surely then we return the result for each route slash parent.
+
+16
+00:01:39,050 --> 00:01:46,650
+So let me show you, you recall that the first result in our record is Scott empaneling seven, seven,
+
+17
+00:01:46,700 --> 00:01:50,840
+eight, eight, and he has one report, Adams.
+
+18
+00:01:52,800 --> 00:01:54,840
+Both of them report into joint.
+
+19
+00:01:57,040 --> 00:02:04,870
+Ford, which is the third row, also has one report, Smith and both of them also report into Jones.
+
+20
+00:02:06,780 --> 00:02:10,170
+So this the first four rows.
+
+21
+00:02:11,960 --> 00:02:14,630
+Actually use Jones as the root.
+
+22
+00:02:16,200 --> 00:02:22,560
+And then from the fifth through, we have Alan, James, Turner, Martin and Ward.
+
+23
+00:02:26,220 --> 00:02:27,870
+They will report into Blake.
+
+24
+00:02:29,480 --> 00:02:33,950
+This continues until every parent has been evaluated.
+
+25
+00:02:35,030 --> 00:02:40,040
+So essentially, this is iterating with each parent as the root.
+
+26
+00:02:43,210 --> 00:02:47,110
+So let's say I want to see the results only with Jones as the root.
+
+27
+00:02:47,620 --> 00:02:55,600
+Well, I can type start with before the connect by clause to start with clause specifies which routes
+
+28
+00:02:55,600 --> 00:02:56,350
+to include.
+
+29
+00:02:58,030 --> 00:03:01,750
+So if I want to include Jones, I can type.
+
+30
+00:03:05,620 --> 00:03:14,020
+Before the connect by clothes start with empire equals seven, five, six, six.
+
+31
+00:03:21,050 --> 00:03:26,190
+And now here we have Jones with all of his direct and indirect reports.
+
+32
+00:03:26,690 --> 00:03:30,200
+Now, what if we wanted to see King, who's the president, as the root?
+
+33
+00:03:31,310 --> 00:03:36,320
+Well, we can change the empire to be King's empire, which is seven, eight, three nine.
+
+34
+00:03:41,940 --> 00:03:49,740
+And now we have all 14 crews, because everyone reports indicate you'll note that Kim does not have
+
+35
+00:03:49,740 --> 00:03:50,560
+a manager, right.
+
+36
+00:03:51,030 --> 00:03:55,560
+So we could also specify talk with manager is No.
+
+37
+00:03:59,100 --> 00:04:00,890
+And we would get the same results.
+
+38
+00:04:03,860 --> 00:04:11,390
+And note that whatever column immediately follows the prior Keywood is referred to as the child column.
+
+39
+00:04:12,740 --> 00:04:15,530
+So if I swapped the prior to be on the other side.
+
+40
+00:04:22,800 --> 00:04:30,630
+Then the manager field is deemed to be the child column and the field is the parent, so we're now actually
+
+41
+00:04:30,630 --> 00:04:32,730
+changing the direction of the tree.
+
+42
+00:04:33,740 --> 00:04:34,910
+So let's check the result.
+
+43
+00:04:40,040 --> 00:04:46,430
+As you can see, we only return one result this time, and that is because if we change the direction
+
+44
+00:04:46,430 --> 00:04:48,950
+of the tree, there is nobody above.
+
+45
+00:04:50,990 --> 00:04:52,760
+So let's test this for James.
+
+46
+00:04:55,620 --> 00:04:58,680
+So Jones has an inferno of seven, five, six, six.
+
+47
+00:05:05,110 --> 00:05:09,490
+Now we can see everybody above Jones, which is just king.
+
+48
+00:05:11,370 --> 00:05:13,590
+And now if I swapped the premier over again.
+
+49
+00:05:22,820 --> 00:05:30,050
+We can see everyone below Jones and I can also swap around manager, and I'm not here to reverse the
+
+50
+00:05:30,050 --> 00:05:31,000
+direction as well.
+
+51
+00:05:33,960 --> 00:05:39,570
+So remember to type prior before you input your child in the equation.

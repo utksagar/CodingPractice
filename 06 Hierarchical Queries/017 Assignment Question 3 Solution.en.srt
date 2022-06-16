@@ -1,0 +1,43 @@
+1
+00:00:01,580 --> 00:00:07,820
+OK, so for this question, we actually need to reverse the direction and go up from Smith all the way
+
+2
+00:00:07,820 --> 00:00:13,130
+to King so we can do that by swapping the employee and manager in the connect by close.
+
+3
+00:00:13,580 --> 00:00:18,560
+And we need the manager to be the child and the employee to be the parent column.
+
+4
+00:00:19,460 --> 00:00:25,790
+So that's type select start from and start with.
+
+5
+00:00:26,360 --> 00:00:31,790
+Employer equals seven three six nine.
+
+6
+00:00:32,830 --> 00:00:39,910
+Which is Smith's employee number, and then we connect by prior to this time specified manager equals
+
+7
+00:00:39,910 --> 00:00:40,330
+employee.
+
+8
+00:00:47,610 --> 00:00:53,820
+So now we actually go from Smith has the root to food, Jones and King.
+
+9
+00:00:55,140 --> 00:00:57,230
+And he is treated as the parent node.
+
+10
+00:00:57,600 --> 00:01:04,920
+As a result, we can see all the people that he reports in to and who they in turn report into uptaking.
+
+11
+00:01:04,920 --> 00:01:05,820
+Who is the president?

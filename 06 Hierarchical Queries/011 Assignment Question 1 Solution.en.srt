@@ -1,0 +1,19 @@
+1
+00:00:01,530 --> 00:00:07,830
+OK, so for this question, we just need to have Clark as the root so we can type, select, start from
+
+2
+00:00:07,830 --> 00:00:15,330
+and start with an equals seven, seven, eight two.
+
+3
+00:00:16,080 --> 00:00:24,360
+So this is Clark's employee number and then connect by Priya and penult equals manager.
+
+4
+00:00:25,820 --> 00:00:26,590
+And here.
+
+5
+00:00:28,420 --> 00:00:33,370
+And there is just one employee that reports on the clock named Miller.

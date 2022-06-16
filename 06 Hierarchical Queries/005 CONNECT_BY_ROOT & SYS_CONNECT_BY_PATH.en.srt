@@ -1,0 +1,163 @@
+1
+00:00:01,080 --> 00:00:07,080
+Connect Beirut can be used in the select statement to return the root value in each word, you just
+
+2
+00:00:07,080 --> 00:00:09,930
+specify the column of the record to return.
+
+3
+00:00:10,710 --> 00:00:13,500
+Connect Beirut is used in the select statement.
+
+4
+00:00:14,580 --> 00:00:21,120
+The syntax is to type connect Beirut and then the name of the column to return from the root record.
+
+5
+00:00:24,150 --> 00:00:30,060
+So if I query the table with King as the root and using the connect by clause as follows.
+
+6
+00:00:53,170 --> 00:00:56,590
+You can see that King is the route and he's on the top.
+
+7
+00:00:57,570 --> 00:01:09,030
+So if I then type followed by Connect by route and the name calling.
+
+8
+00:01:11,850 --> 00:01:20,520
+We now have King repeated in each row, and we can also alias this caller.
+
+9
+00:01:30,380 --> 00:01:31,190
+As you can see.
+
+10
+00:01:33,510 --> 00:01:41,250
+Now, let's do the same, but this time with Jones as the root, so where employee start with employees
+
+11
+00:01:42,210 --> 00:01:45,120
+equals seven, five, six, six.
+
+12
+00:01:49,230 --> 00:01:50,490
+Now we have Jones.
+
+13
+00:01:53,570 --> 00:01:58,070
+And if I don't want to return the name, I can just type another column.
+
+14
+00:01:58,550 --> 00:01:59,930
+So let's say emperor.
+
+15
+00:02:03,950 --> 00:02:12,620
+And instead of the name, we return the employee ID now let's see what happens when we don't have to
+
+16
+00:02:12,620 --> 00:02:13,520
+start with field.
+
+17
+00:02:14,840 --> 00:02:16,440
+So we're using multiple routes.
+
+18
+00:02:16,760 --> 00:02:20,720
+So if I delete this Antikythera.
+
+19
+00:02:22,630 --> 00:02:23,800
+So now we can see.
+
+20
+00:02:25,210 --> 00:02:28,690
+The employee number that each role belongs to.
+
+21
+00:02:30,040 --> 00:02:35,890
+And that makes it much clearer to understand who the root is, and it will become even clearer if I
+
+22
+00:02:35,890 --> 00:02:38,260
+change this to you name again.
+
+23
+00:02:43,600 --> 00:02:51,070
+So now we can see all the records where Scott is, the route forward, Allen James and so on.
+
+24
+00:02:55,950 --> 00:03:04,160
+This connect bypass function shows you the path up to the route for each node, you just define a separator
+
+25
+00:03:04,980 --> 00:03:10,110
+and just like the connect by path and level, it's used in the select statement.
+
+26
+00:03:13,540 --> 00:03:20,620
+And the function takes two parameters, the column name and the separator, which is a character.
+
+27
+00:03:23,950 --> 00:03:31,900
+So let's use this connect bypass in our previous query with Jones as the root, so I will type, select
+
+28
+00:03:32,410 --> 00:03:45,450
+and dot star system to connect dots, um, underscore sorry I on this call path and I will type e name
+
+29
+00:03:45,790 --> 00:03:48,730
+and specify the dash as the separator.
+
+30
+00:03:52,140 --> 00:03:52,680
+From.
+
+31
+00:03:53,790 --> 00:04:00,870
+And I would like it to start with no equals seven, five, six, six.
+
+32
+00:04:03,560 --> 00:04:12,770
+Connect high pressure, temperature equals manager and hit run.
+
+33
+00:04:17,090 --> 00:04:24,440
+So now in our results, we can see the path, we can make this clearer by also showing level.
+
+34
+00:04:28,290 --> 00:04:34,260
+We can see that level one just has one employee and level two has two employees.
+
+35
+00:04:34,860 --> 00:04:37,320
+Let's go to Jones now.
+
+36
+00:04:37,340 --> 00:04:39,480
+Let's do this by commenting out.
+
+37
+00:04:39,480 --> 00:04:40,110
+Start with.
+
+38
+00:04:49,540 --> 00:04:58,420
+And we can see that level one just has one again, level two as two and so on, and we can also change
+
+39
+00:04:58,420 --> 00:05:02,830
+this instead of each name to the emperor and change the dash.
+
+40
+00:05:04,660 --> 00:05:06,490
+To be a forward slash.
+
+41
+00:05:09,800 --> 00:05:17,060
+As you can see, OK, great, so that was showing you how to use, connect, bypass and connect by.

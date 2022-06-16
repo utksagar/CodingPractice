@@ -1,0 +1,359 @@
+1
+00:00:01,070 --> 00:00:07,220
+Roll-Up is an extension to the group bylaws that allows you to generate subtotal as well as mine totals.
+
+2
+00:00:08,800 --> 00:00:15,400
+The subtitles are generated based on the order of the columns provided after the Roll-Up Keywood, the
+
+3
+00:00:15,400 --> 00:00:21,460
+first column provided is on the top of the hierarchy and the last column provided is at the bottom of
+
+4
+00:00:21,460 --> 00:00:22,120
+the hierarchy.
+
+5
+00:00:23,180 --> 00:00:28,760
+So in the syntax on the screen, we have to non-segregated columns in our select statement, column
+
+6
+00:00:28,760 --> 00:00:35,480
+one and column two in our group because we have the Roll-Up extension with column one and column two
+
+7
+00:00:35,630 --> 00:00:36,620
+in parenthesis.
+
+8
+00:00:37,550 --> 00:00:38,770
+Column one is first.
+
+9
+00:00:39,620 --> 00:00:42,750
+So that is greater than column two in terms of its hierarchy.
+
+10
+00:00:43,460 --> 00:00:49,070
+So when the subtitles are generated, they are done first for the column one column two combination
+
+11
+00:00:49,880 --> 00:00:53,420
+and then it's done for the column one combination on its own.
+
+12
+00:00:53,840 --> 00:00:56,960
+And then finally it's done for the grand total.
+
+13
+00:00:58,850 --> 00:01:04,530
+In the next example, we have three columns in the roll up extension column.
+
+14
+00:01:04,550 --> 00:01:10,190
+One is greater than column two and column two is greater than column three in terms of its hierarchy.
+
+15
+00:01:10,430 --> 00:01:16,010
+And this is based on the ordering column one is first column to a second and column three third.
+
+16
+00:01:16,160 --> 00:01:18,240
+So that's also the order of the hierarchy.
+
+17
+00:01:19,370 --> 00:01:27,050
+So when the subtotal is generated first, they are generated for column one, two and three and then
+
+18
+00:01:27,050 --> 00:01:32,960
+they are generated for column one and column two combination and then calculated for the column one
+
+19
+00:01:32,960 --> 00:01:33,650
+on its own.
+
+20
+00:01:34,340 --> 00:01:36,740
+And then the grand total is calculated.
+
+21
+00:01:38,940 --> 00:01:44,850
+OK, so let's do an example, using our eBay underscore countries table, I first want to do a group
+
+22
+00:01:44,850 --> 00:01:49,020
+buy and return the total population grouped by region and subregion.
+
+23
+00:01:49,020 --> 00:01:55,740
+I note that I will use the Engvall function to replace null values for the region.
+
+24
+00:01:55,740 --> 00:02:03,150
+Idee and subregion ID columns to replace nulls with zero as nodes can be confusing to interpret when
+
+25
+00:02:03,150 --> 00:02:04,400
+analysing our results.
+
+26
+00:02:05,590 --> 00:02:12,860
+So I type select and then I specify Engvall region underscore.
+
+27
+00:02:14,320 --> 00:02:27,940
+And zero zero is the value to replace and he knows that Engvall sub region and then the aggregation,
+
+28
+00:02:28,150 --> 00:02:31,030
+which will be the sum of the population.
+
+29
+00:02:34,450 --> 00:02:45,040
+From India on the scale countries, and I want to groove by these two points and note, I am retaining
+
+30
+00:02:45,040 --> 00:02:49,830
+the enviable evening in the group columns and here by.
+
+31
+00:02:53,010 --> 00:02:54,540
+Here are our results.
+
+32
+00:02:56,110 --> 00:02:57,400
+No, we don't have any.
+
+33
+00:02:58,370 --> 00:03:07,400
+Subtotal or grand hotels, apart from obviously the totals of the region, idee and subregion it grew
+
+34
+00:03:07,420 --> 00:03:07,700
+by.
+
+35
+00:03:09,540 --> 00:03:15,810
+So now let's use the Roll-Up in our group by clause, so I will.
+
+36
+00:03:18,620 --> 00:03:19,640
+Type Roll-Up.
+
+37
+00:03:21,670 --> 00:03:29,530
+Open parenthesis, put this in a single line for readability, close parentheses and terminate with
+
+38
+00:03:29,530 --> 00:03:30,280
+a semicolon.
+
+39
+00:03:32,330 --> 00:03:33,170
+And here, run.
+
+40
+00:03:38,210 --> 00:03:45,050
+So before I even evaluate the results, I'll tell you what I expect to see, I would expect to see some
+
+41
+00:03:45,050 --> 00:03:52,210
+totals for the region and the subregions combination, which would also be returned by the normal group,
+
+42
+00:03:52,220 --> 00:03:53,230
+by Claw's anyway.
+
+43
+00:03:53,420 --> 00:03:54,440
+So no change there.
+
+44
+00:03:54,980 --> 00:03:59,820
+But then I would also expect to see the region totals as the subregion.
+
+45
+00:03:59,840 --> 00:04:05,000
+It would get dropped off and then I would expect to see the grand total.
+
+46
+00:04:06,210 --> 00:04:09,000
+So as you can see.
+
+47
+00:04:10,910 --> 00:04:17,750
+All of these rows here are the combinations for regionality and subregion anyway, and then where we've
+
+48
+00:04:17,750 --> 00:04:25,280
+got a nul in the subregion, it signifies that we've got a total value for regionality.
+
+49
+00:04:25,610 --> 00:04:31,790
+So you can see that the value for regionality 10 is just over a billion, and that would be the sum
+
+50
+00:04:31,910 --> 00:04:33,230
+of these two values here.
+
+51
+00:04:35,840 --> 00:04:37,340
+And if we keep scrolling down.
+
+52
+00:04:38,380 --> 00:04:42,400
+Where we've got to null values would be the grand total.
+
+53
+00:04:43,480 --> 00:04:45,640
+So that would be seven point seven billion.
+
+54
+00:04:50,080 --> 00:04:51,050
+OK, great.
+
+55
+00:04:51,910 --> 00:04:58,960
+So next, let's do a roll up with three columns, let's add organization regionality.
+
+56
+00:04:59,950 --> 00:05:05,440
+So I will type Engvall organization region wide.
+
+57
+00:05:07,980 --> 00:05:14,970
+Papilla, don't forget to do a comma before and then add that to the hierarchy.
+
+58
+00:05:18,050 --> 00:05:26,210
+And he and actually, before I hit run this time, what I expect to see would be the subtitles for the
+
+59
+00:05:26,210 --> 00:05:32,660
+region in the subregion was an organization regionality, as you would even if this was a group by statement.
+
+60
+00:05:33,680 --> 00:05:40,640
+Then I would expect to see the subtotal for the region and the subregion I'd combination and then just
+
+61
+00:05:40,640 --> 00:05:45,310
+for the region it and then the grand total, so let's it run.
+
+62
+00:05:50,040 --> 00:05:50,970
+So as you can see.
+
+63
+00:05:53,600 --> 00:06:01,040
+Each row individually is showing the combination of all three columns, and then we have the total for
+
+64
+00:06:01,040 --> 00:06:07,250
+the region and the sub region and combinations where we have no value in the third column.
+
+65
+00:06:09,370 --> 00:06:17,170
+And then where we have another value in the subregion, it and the organization region IT fields would
+
+66
+00:06:17,170 --> 00:06:19,090
+be the total for the region.
+
+67
+00:06:19,750 --> 00:06:24,280
+So this is the total for region wide 10, which is, again, just over one billion.
+
+68
+00:06:26,350 --> 00:06:27,880
+And then if I keep scrolling down.
+
+69
+00:06:30,510 --> 00:06:33,510
+We have the grand total where all columns are No.
+
+70
+00:06:37,580 --> 00:06:46,100
+You also don't need to include all columns in your roll up, you can do a partial roll up, but of course
+
+71
+00:06:46,100 --> 00:06:52,240
+you do need to have all non-segregated columns from your select statement in the group by at least,
+
+72
+00:06:52,250 --> 00:06:53,380
+otherwise you'll get an error.
+
+73
+00:06:54,410 --> 00:07:03,080
+So let's remove organization regionalised from the Roll-Up extension and just put it as a group by.
+
+74
+00:07:08,290 --> 00:07:14,920
+So this is known as a partial Roll-Up and the grouping for region, subregion, ID and organization
+
+75
+00:07:14,920 --> 00:07:21,340
+region ID will still happen, but then the Roll-Up will happen for the region and the subregion.
+
+76
+00:07:21,350 --> 00:07:21,620
+It.
+
+77
+00:07:22,830 --> 00:07:30,060
+First, it will evaluate the subtotal for the region and the sub region, it along with the organization
+
+78
+00:07:30,060 --> 00:07:30,720
+Region Idee.
+
+79
+00:07:31,880 --> 00:07:39,080
+Then it will calculate the subtotal for the region, it along with the organization region, and then
+
+80
+00:07:39,080 --> 00:07:45,880
+it will calculate the subtotal for organization region on its own because that is outside the ruler.
+
+81
+00:07:46,070 --> 00:07:49,250
+So it will always be in a subtotal combination.
+
+82
+00:07:52,820 --> 00:07:56,690
+And as you can see, we return combinations of all three.
+
+83
+00:07:58,090 --> 00:08:01,990
+And then the combination of the region and the organization region in.
+
+84
+00:08:03,310 --> 00:08:13,120
+And then the total for the organization region it only and we don't return the grand total because no
+
+85
+00:08:13,120 --> 00:08:18,760
+matter what happens, we must group by organization regionality, which is outside of the Roll-Up.
+
+86
+00:08:20,270 --> 00:08:25,730
+Now, if I was to remove the organization regionality altogether.
+
+87
+00:08:27,100 --> 00:08:27,970
+I would get an error.
+
+88
+00:08:29,580 --> 00:08:33,120
+Because we still need to group this non-segregated field.
+
+89
+00:08:35,160 --> 00:08:41,310
+OK, so these examples are just to show you the different ways that you can leverage the role up extension
+
+90
+00:08:41,430 --> 00:08:42,570
+in your group because.

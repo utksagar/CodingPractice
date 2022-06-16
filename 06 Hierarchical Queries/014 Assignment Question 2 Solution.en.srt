@@ -1,0 +1,23 @@
+1
+00:00:01,230 --> 00:00:09,390
+OK, so this time we're using Blakers the route and we need an older siblings by close so we can select,
+
+2
+00:00:09,630 --> 00:00:23,490
+start from and start with M equals legs and have seven, six, nine, eight connect by prior employer
+
+3
+00:00:23,700 --> 00:00:32,130
+equals manager and then older siblings by salary descending.
+
+4
+00:00:32,520 --> 00:00:35,910
+We have to specify descending because it's ascending by default.
+
+5
+00:00:39,280 --> 00:00:41,860
+And we can see the Salibi decreasing.
+
+6
+00:00:44,000 --> 00:00:47,120
+Amongst the child records.

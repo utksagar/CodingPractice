@@ -1,0 +1,83 @@
+1
+00:00:02,510 --> 00:00:10,040
+OK, so for this question, we just need to have our subtitles for all combinations of the non-segregated
+
+2
+00:00:10,040 --> 00:00:10,490
+fields'.
+
+3
+00:00:11,710 --> 00:00:14,800
+So we can use Cube instead of Roll-Up.
+
+4
+00:00:15,660 --> 00:00:21,170
+And another requirement was to not have any no values, so we'll use the envy formula again.
+
+5
+00:00:22,440 --> 00:00:28,980
+And on top of that, we need to show the grouping it this time, so we will use the grouping IT formula
+
+6
+00:00:29,160 --> 00:00:32,930
+and have the subregion ID and all region it inside it.
+
+7
+00:00:33,810 --> 00:00:41,270
+So we type select in the sub region wide,
+
+8
+00:00:44,190 --> 00:00:48,780
+the organization region wide.
+
+9
+00:00:52,370 --> 00:00:59,150
+And then the group ID formula, which will take.
+
+10
+00:01:00,970 --> 00:01:02,080
+These two columns in.
+
+11
+00:01:04,190 --> 00:01:05,360
+But then in the same line.
+
+12
+00:01:10,250 --> 00:01:19,760
+It is this group, Heidi, and then the aggregation, which is population from undisclosed countries.
+
+13
+00:01:21,130 --> 00:01:24,610
+We then would find the cube extension.
+
+14
+00:01:26,390 --> 00:01:28,190
+And I can actually just copy this.
+
+15
+00:01:32,070 --> 00:01:33,510
+Into that cube extension.
+
+16
+00:01:35,740 --> 00:01:36,530
+And here.
+
+17
+00:01:38,960 --> 00:01:40,370
+And here are our results.
+
+18
+00:01:43,810 --> 00:01:45,190
+And we can see from the flag.
+
+19
+00:01:46,880 --> 00:01:50,120
+That here is a subtotal with the group of three.
+
+20
+00:01:52,140 --> 00:02:02,250
+Group 82 is the organization regionalised, Total Group 81 is the subregion in total, and Group Zero
+
+21
+00:02:02,730 --> 00:02:07,830
+is the usual subregion and organization regionality subtitles.

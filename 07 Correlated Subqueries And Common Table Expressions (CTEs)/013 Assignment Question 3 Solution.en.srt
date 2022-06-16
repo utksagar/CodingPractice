@@ -1,0 +1,95 @@
+1
+00:00:01,250 --> 00:00:08,750
+OK, so for this question, we need to use a recursive cty and have Jones as the anchor result, we
+
+2
+00:00:08,750 --> 00:00:14,600
+then have to have a join in the recursive clause, part of the sub query, where we join the table to
+
+3
+00:00:14,600 --> 00:00:21,010
+the city based on the emperor of the city to be the manager ID in the table.
+
+4
+00:00:21,800 --> 00:00:25,060
+We then add another field, called it on the school.
+
+5
+00:00:25,190 --> 00:00:29,410
+No, so we can see which iteration number each result is from.
+
+6
+00:00:30,620 --> 00:00:42,470
+So we can type with and I'll call it qty underscore and and have employee in manager and later on the
+
+7
+00:00:42,470 --> 00:00:50,210
+school known as Select and no e name manager.
+
+8
+00:00:50,510 --> 00:00:56,950
+And I'll give the Italo a scalar value of one for the anchor result.
+
+9
+00:00:58,530 --> 00:00:59,130
+From.
+
+10
+00:01:00,690 --> 00:01:07,260
+And where e name equals Jones.
+
+11
+00:01:09,700 --> 00:01:24,100
+Within the union and then for the recursive clause we select and to enter and name and DOE manager and
+
+12
+00:01:24,100 --> 00:01:36,450
+then qty underscore ampe to end plus one from Qty, underscore and join in on qty underscore ampe.
+
+13
+00:01:39,520 --> 00:01:47,020
+And no equals and don't manager, we then select staff from our city.
+
+14
+00:01:50,510 --> 00:01:51,290
+And here on.
+
+15
+00:01:53,260 --> 00:01:55,940
+I'm sorry they should be on this call.
+
+16
+00:01:56,140 --> 00:01:56,590
+No.
+
+17
+00:01:57,560 --> 00:01:58,400
+And here on.
+
+18
+00:02:00,960 --> 00:02:08,970
+And now here are results we can see Jones as part of the anchor query, is in the first iteration and
+
+19
+00:02:08,970 --> 00:02:12,090
+then Scott and forward report into Jones.
+
+20
+00:02:13,640 --> 00:02:15,710
+As part of the second iteration.
+
+21
+00:02:16,770 --> 00:02:22,650
+And then the third iteration, we have Adams and Smith, who report to Scott and Ford as part of the
+
+22
+00:02:22,650 --> 00:02:31,290
+final iteration and after Adams and Smith do not have manager, it's because Adams and Smith are not
+
+23
+00:02:31,290 --> 00:02:33,330
+managers to any other employees.
+
+24
+00:02:33,900 --> 00:02:35,370
+So what iteration and.

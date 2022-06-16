@@ -1,0 +1,119 @@
+1
+00:00:01,760 --> 00:00:07,720
+I recall Escudo has hierarchical queries that are used specifically for data that is hierarchical,
+
+2
+00:00:08,420 --> 00:00:13,100
+these queries allow you to arrange the rows of these tables in hierarchical order.
+
+3
+00:00:15,190 --> 00:00:19,880
+Hierarchical data is data that contains a parent child relationship.
+
+4
+00:00:20,500 --> 00:00:28,120
+For example, organizational data such as the empty pool that we query, there are two fields the employee
+
+5
+00:00:28,270 --> 00:00:29,410
+and the manager field.
+
+6
+00:00:29,920 --> 00:00:34,420
+The manager field is the parent column and the employee field is the child column.
+
+7
+00:00:35,830 --> 00:00:42,280
+Other examples of hierarchical data include general ledger data, for example, you have costs that
+
+8
+00:00:42,280 --> 00:00:48,070
+belong to specific subaccount codes and these subaccount codes roll up into account codes.
+
+9
+00:00:49,420 --> 00:00:54,430
+You also have product hierarchies where you have some products and product categories.
+
+10
+00:00:55,560 --> 00:01:01,440
+There are many other hierarchical data set examples, too, but for this section will specifically be
+
+11
+00:01:01,440 --> 00:01:02,990
+working on our table.
+
+12
+00:01:05,390 --> 00:01:12,110
+This slide shows our table data arranged in its tree structure so you can see the hierarchy.
+
+13
+00:01:13,150 --> 00:01:16,040
+Right at the top is King, who is the president.
+
+14
+00:01:16,630 --> 00:01:21,840
+He does not have a manager and below King we have Jones Lake and Clark.
+
+15
+00:01:22,690 --> 00:01:27,730
+This is the next level down and is referred to as level two in the hierarchy.
+
+16
+00:01:29,470 --> 00:01:38,710
+Jones has two reports, Scott and Forward Blake has five reports, Alan Ward, Martin Turner and James
+
+17
+00:01:39,280 --> 00:01:40,910
+and Clark has one report.
+
+18
+00:01:41,290 --> 00:01:44,380
+Miller, this is referred to as level three.
+
+19
+00:01:45,860 --> 00:01:52,940
+Then in the next level, we have Adams, who reports to Scott and Smith, who reports to Ford, this
+
+20
+00:01:52,940 --> 00:01:54,560
+is referred to as level four.
+
+21
+00:01:57,720 --> 00:02:04,250
+All of the so-called employees can be referred to as parents or roots as they have employees who reporting
+
+22
+00:02:04,270 --> 00:02:04,730
+into them.
+
+23
+00:02:06,060 --> 00:02:12,900
+So this is our hierarchy now when we look at the table in Oracle, it's not so clear compared to this
+
+24
+00:02:12,900 --> 00:02:13,440
+diagram.
+
+25
+00:02:14,930 --> 00:02:21,320
+This is because the data is not arranged in hierarchical order, and that's why we use hierarchical
+
+26
+00:02:21,320 --> 00:02:24,650
+queries, as you will see in the coming lectures.
+
+27
+00:02:27,340 --> 00:02:33,100
+The syntax for hierarchical queries is shown on the screen, and the bits highlighted in orange are
+
+28
+00:02:33,150 --> 00:02:35,920
+y will go through in turn in the coming lectures.
+
+29
+00:02:36,370 --> 00:02:41,650
+So for now, just keep this as a reference and I will explain all of the pseudo columns, functions
+
+30
+00:02:41,650 --> 00:02:42,580
+and clauses.
